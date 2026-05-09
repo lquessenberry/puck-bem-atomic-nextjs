@@ -1,16 +1,9 @@
-app = 'puck-bem-atomic-nextjs'
-primary_region = 'ord'
-
-[build]
-  image = 'flyio/nextjs-standalone:latest'
+app = "puck-bem-atomic-nextjs"
+primary_region = "ord"
 
 [http_service]
   internal_port = 3000
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
-
-[[vm]]
-  memory = '512mb'
-  cpu_kind = 'shared'
-  cpus = 1
+  min_machines_running = 1
