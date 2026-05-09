@@ -1,0 +1,1 @@
+full puck config
