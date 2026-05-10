@@ -1,1 +1,21 @@
-full card scss
+.card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  &__title {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  &__body {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+}
