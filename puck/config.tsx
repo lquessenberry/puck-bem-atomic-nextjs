@@ -3,13 +3,19 @@
 import type { Config } from "@measured/puck";
 import { Button } from "../components/atoms/Button/Button";
 import { Card } from "../components/atoms/Card/Card";
+import { ThemeProvider } from "../components/ThemeProvider";
+import type { Theme } from "../components/ThemeProvider";
 
 type Props = {
   Button: { label: string; variant: "primary" | "secondary" };
   Card: { title: string; body: string };
 };
 
-const config: Config<Props> = {
+type RootProps = {
+  theme: Theme;
+};
+
+export const config: Config<Props, RootProps> = {
   components: {
     Button: {
       fields: {
@@ -39,6 +45,24 @@ const config: Config<Props> = {
       },
       render: ({ title, body }) => <Card title={title} body={body} />,
     },
+  },
+  root: {
+    fields: {
+      theme: {
+        type: "select",
+        options: [
+          { label: "Light", value: "light" },
+          { label: "Dark", value: "dark" },
+          { label: "Brand", value: "brand" },
+        ],
+      },
+    },
+    defaultProps: {
+      theme: "light",
+    },
+    render: ({ children, theme }) => (
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    ),
   },
 };
 

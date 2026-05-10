@@ -1,21 +1,47 @@
 .card {
-  border: 1px solid #eaeaea;
+  --card-bg: #fff;
+  --card-border: #eaeaea;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-title-color: #111;
+  --card-body-color: #555;
+
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 1.5rem;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px var(--card-shadow);
 
   &__title {
     margin: 0 0 0.75rem;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #111;
+    color: var(--card-title-color);
   }
 
   &__body {
     margin: 0;
     font-size: 1rem;
-    color: #555;
+    color: var(--card-body-color);
     line-height: 1.6;
+  }
+
+  &--theme-light {
+    // default light styles — no overrides needed
+  }
+
+  &--theme-dark {
+    --card-bg: #1a1a2e;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --card-title-color: #e0e0e0;
+    --card-body-color: #aaa;
+  }
+
+  &--theme-brand {
+    --card-bg: #fff0f8;
+    --card-border: #ff00aa;
+    --card-shadow: rgba(255, 0, 170, 0.15);
+    --card-title-color: #cc0088;
+    --card-body-color: #880055;
   }
 }

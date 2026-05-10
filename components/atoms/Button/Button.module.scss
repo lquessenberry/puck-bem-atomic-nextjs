@@ -23,4 +23,20 @@
     background-color: #eaeaea;
     color: #333;
   }
+
+  &--theme-light {
+    // default light styles — no overrides needed
+  }
+
+  &--theme-dark {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &--theme-brand {
+    background-color: #ff00aa;
+    color: #fff;
+    border: none;
+  }
 }

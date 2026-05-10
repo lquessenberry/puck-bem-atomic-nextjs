@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Puck BEM Atomic Next.js",
-  description: "A Puck editor boilerplate with Atomic Design and BEM SCSS",
+  title: "Puck + BEM Atomic",
+  description: "Next.js + Puck + Atomic Design + Classic BEM",
 };
 
 export default function RootLayout({

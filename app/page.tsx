@@ -2,7 +2,7 @@
 
 import { Puck } from "@measured/puck";
 import "@measured/puck/puck.css";
-import config from "../puck/config";
+import { config } from "@/puck/config";
 
 const initialData = {
   content: [],
@@ -20,3 +20,4 @@ export default function Page() {
     />
   );
 }
+
