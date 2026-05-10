@@ -1,1 +1,19 @@
-full card scss
+.card {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
