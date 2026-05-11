@@ -509,6 +509,8 @@ export const config: Config<
     FeatureGrid: {
       fields: {
         title: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         columns: {
           type: "select",
           options: [
@@ -519,6 +521,7 @@ export const config: Config<
         items: {
           type: "array",
           arrayFields: {
+            id: { type: "text" },
             title: { type: "text" },
             description: { type: "textarea" },
             icon: { type: "text" },
@@ -527,19 +530,24 @@ export const config: Config<
       },
       defaultProps: {
         title: "Why teams pick AtomicPuck",
+        imageSrc: "/images/placeholders/organisms/feature-grid.svg",
+        imageAlt: "Feature grid placeholder preview",
         columns: 3,
         items: [
           {
+            id: "feature-design-universes",
             icon: "🎛️",
             title: "Design universes",
             description: "Switch complete token systems with one root attribute.",
           },
           {
+            id: "feature-strict-bem",
             icon: "🧱",
             title: "Strict BEM",
             description: "Predictable architecture from atoms through organisms.",
           },
           {
+            id: "feature-mobile-first",
             icon: "📱",
             title: "Mobile-first",
             description: "Touch targets and spacing tuned for native-like experiences.",
@@ -553,6 +561,8 @@ export const config: Config<
         eyebrow: { type: "text" },
         title: { type: "text" },
         body: { type: "textarea" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         primaryLabel: { type: "text" },
         primaryHref: { type: "text" },
         secondaryLabel: { type: "text" },
@@ -569,6 +579,8 @@ export const config: Config<
         eyebrow: "AtomicPuck",
         title: "Build premium visual experiences in days",
         body: "A production-grade page builder starter for teams who care about architecture, design quality, and shipping speed.",
+        imageSrc: "/images/placeholders/organisms/hero.svg",
+        imageAlt: "Hero placeholder preview",
         primaryLabel: "Start building",
         primaryHref: "#",
         secondaryLabel: "Browse blocks",
@@ -580,9 +592,12 @@ export const config: Config<
     BottomNavigation: {
       fields: {
         ariaLabel: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         items: {
           type: "array",
           arrayFields: {
+            id: { type: "text" },
             label: { type: "text" },
             href: { type: "text" },
             icon: { type: "text" },
@@ -595,11 +610,13 @@ export const config: Config<
       },
       defaultProps: {
         ariaLabel: "Primary mobile navigation",
+        imageSrc: "/images/placeholders/organisms/bottom-navigation.svg",
+        imageAlt: "Bottom navigation placeholder preview",
         items: [
-          { label: "Home", href: "#", icon: "🏠", active: true },
-          { label: "Explore", href: "#", icon: "🔎", active: false },
-          { label: "Saved", href: "#", icon: "⭐", active: false },
-          { label: "Profile", href: "#", icon: "👤", active: false },
+          { id: "bottom-nav-home", label: "Home", href: "#", icon: "🏠", active: true },
+          { id: "bottom-nav-explore", label: "Explore", href: "#", icon: "🔎", active: false },
+          { id: "bottom-nav-saved", label: "Saved", href: "#", icon: "⭐", active: false },
+          { id: "bottom-nav-profile", label: "Profile", href: "#", icon: "👤", active: false },
         ],
       },
       render: (props) => <BottomNavigation {...props} />,
@@ -610,6 +627,8 @@ export const config: Config<
         author: { type: "text" },
         role: { type: "text" },
         company: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         rating: {
           type: "select",
           options: [
@@ -626,6 +645,8 @@ export const config: Config<
         author: "Taylor Morgan",
         role: "Staff Product Designer",
         company: "Northstar Labs",
+        imageSrc: "/images/placeholders/organisms/testimonial.svg",
+        imageAlt: "Testimonial placeholder preview",
         rating: 5,
       },
       render: (props) => <Testimonial {...props} />,
@@ -636,6 +657,8 @@ export const config: Config<
         price: { type: "text" },
         billingPeriod: { type: "text" },
         description: { type: "textarea" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         featured: {
           type: "radio",
           options: [...yesNoOptions],
@@ -645,6 +668,7 @@ export const config: Config<
         features: {
           type: "array",
           arrayFields: {
+            id: { type: "text" },
             text: { type: "text" },
           },
         },
@@ -654,18 +678,18 @@ export const config: Config<
         price: "$49",
         billingPeriod: "mo",
         description: "For teams shipping polished customer-facing experiences.",
+        imageSrc: "/images/placeholders/organisms/pricing-tier.svg",
+        imageAlt: "Pricing tier placeholder preview",
         featured: true,
         ctaLabel: "Start trial",
         ctaHref: "#",
         features: [
-          { text: "Unlimited pages" },
-          { text: "Design universes" },
-          { text: "Priority support" },
+          { id: "feature-unlimited-pages", text: "Unlimited pages" },
+          { id: "feature-design-universes", text: "Design universes" },
+          { id: "feature-priority-support", text: "Priority support" },
         ],
       },
-      render: ({ features, ...props }) => (
-        <PricingTier {...props} features={features.map((feature) => feature.text)} />
-      ),
+      render: (props) => <PricingTier {...props} />,
     },
     MobileHeader: {
       fields: {
@@ -674,6 +698,8 @@ export const config: Config<
         menuHref: { type: "text" },
         ctaLabel: { type: "text" },
         ctaHref: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
       },
       defaultProps: {
         brand: "AtomicPuck",
@@ -681,15 +707,20 @@ export const config: Config<
         menuHref: "#",
         ctaLabel: "Sign In",
         ctaHref: "#",
+        imageSrc: "/images/placeholders/organisms/mobile-header.svg",
+        imageAlt: "Mobile header placeholder preview",
       },
       render: (props) => <MobileHeader {...props} />,
     },
     StatsSection: {
       fields: {
         title: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         stats: {
           type: "array",
           arrayFields: {
+            id: { type: "text" },
             value: { type: "text" },
             label: { type: "text" },
           },
@@ -697,11 +728,13 @@ export const config: Config<
       },
       defaultProps: {
         title: "Trusted by growth teams",
+        imageSrc: "/images/placeholders/organisms/stats-section.svg",
+        imageAlt: "Stats section placeholder preview",
         stats: [
-          { value: "3x", label: "Faster launch cycles" },
-          { value: "95", label: "Lighthouse performance" },
-          { value: "3rem", label: "Touch-target minimum" },
-          { value: "4", label: "Built-in universes" },
+          { id: "stat-launch-cycles", value: "3x", label: "Faster launch cycles" },
+          { id: "stat-lighthouse", value: "95", label: "Lighthouse performance" },
+          { id: "stat-touch-target", value: "3rem", label: "Touch-target minimum" },
+          { id: "stat-universes", value: "4", label: "Built-in universes" },
         ],
       },
       render: (props) => <StatsSection {...props} />,
