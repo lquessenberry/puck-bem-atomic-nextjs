@@ -9,7 +9,7 @@ export const landingPagePreset = {
   content: [
     {
       type: "Heading",
-      props: { text: "BEM Puck Thang", level: "h1", align: "left" },
+      props: { text: "BEM Puck Starter", level: "h1", align: "left" },
     },
     {
       type: "Text",
