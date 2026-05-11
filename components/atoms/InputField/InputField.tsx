@@ -9,6 +9,8 @@ export interface InputFieldProps {
   required?: boolean;
   disabled?: boolean;
   invalid?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function InputField({
@@ -20,12 +22,17 @@ export function InputField({
   required = false,
   disabled = false,
   invalid = false,
+  imageSrc,
+  imageAlt = "",
 }: InputFieldProps) {
   const fieldId = label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const helperId = helperText ? `${fieldId}-helper` : undefined;
 
   return (
     <div className={styles["input-field"]}>
+      {imageSrc ? (
+        <img className={styles["input-field__image"]} src={imageSrc} alt={imageAlt} />
+      ) : null}
       <label htmlFor={fieldId} className={styles["input-field__label"]}>
         {label}
       </label>

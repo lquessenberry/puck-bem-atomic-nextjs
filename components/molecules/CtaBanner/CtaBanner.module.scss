@@ -7,6 +7,27 @@
     var(--color-surface-strong),
     color-mix(in srgb, var(--color-primary), var(--color-surface-strong) 88%)
   );
+  transition:
+    transform var(--motion-duration-fast) var(--motion-easing-standard),
+    box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+
+  &:hover {
+    transform: translateY(calc(var(--spacing-1) * -1));
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-sm);
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: var(--spacing-0) solid var(--color-border);
+    margin-bottom: var(--spacing-4);
+  }
 
   &__meta {
     margin-bottom: var(--spacing-3);

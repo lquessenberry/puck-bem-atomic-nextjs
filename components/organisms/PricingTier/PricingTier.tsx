@@ -9,7 +9,9 @@ export interface PricingTierProps {
   featured?: boolean;
   ctaLabel: string;
   ctaHref: string;
-  features: string[];
+  features: Array<{ id: string; text: string }>;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function PricingTier({
@@ -21,9 +23,14 @@ export function PricingTier({
   ctaLabel,
   ctaHref,
   features,
+  imageSrc,
+  imageAlt = "",
 }: PricingTierProps) {
   return (
     <section className={`${styles["pricing-tier"]} ${featured ? styles["pricing-tier--featured"] : ""}`.trim()} aria-label={`${name} pricing tier`}>
+      {imageSrc ? (
+        <img className={styles["pricing-tier__image"]} src={imageSrc} alt={imageAlt} />
+      ) : null}
       <h3 className={styles["pricing-tier__name"]}>{name}</h3>
       <p className={styles["pricing-tier__price"]}>
         {price}
@@ -32,9 +39,9 @@ export function PricingTier({
       <p className={styles["pricing-tier__description"]}>{description}</p>
       <Button label={ctaLabel} href={ctaHref} variant={featured ? "primary" : "secondary"} fullWidth />
       <ul className={styles["pricing-tier__features"]}>
-        {features.map((feature, index) => (
-          <li key={feature} className={styles["pricing-tier__feature"]}>
-            {feature}
+        {features.map((feature) => (
+          <li key={feature.id} className={styles["pricing-tier__feature"]}>
+            {feature.text}
           </li>
         ))}
       </ul>

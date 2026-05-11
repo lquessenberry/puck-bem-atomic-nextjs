@@ -5,6 +5,27 @@
   border-radius: var(--radius-2xl);
   border: var(--spacing-0) solid var(--color-border);
   background: var(--color-surface-strong);
+  transition:
+    transform var(--motion-duration-fast) var(--motion-easing-standard),
+    box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+
+  &:hover {
+    transform: translateY(calc(var(--spacing-1) * -1));
+    box-shadow: var(--shadow-sm);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-sm);
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: var(--spacing-0) solid var(--color-border);
+  }
 
   &__title {
     margin: 0;

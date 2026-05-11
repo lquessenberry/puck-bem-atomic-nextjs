@@ -5,17 +5,32 @@ export interface IconProps {
   label?: string;
   tone?: "default" | "accent" | "muted";
   size?: "sm" | "md" | "lg";
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export function Icon({ symbol, label, tone = "default", size = "md" }: IconProps) {
+export function Icon({
+  symbol,
+  label,
+  tone = "default",
+  size = "md",
+  imageSrc,
+  imageAlt = "",
+}: IconProps) {
+  const hasImage = Boolean(imageSrc);
+
   return (
     <span
       className={`${styles.icon} ${styles[`icon--${tone}`]} ${styles[`icon--${size}`]}`}
-      role={label ? "img" : undefined}
-      aria-label={label}
-      aria-hidden={label ? undefined : "true"}
+      role={!hasImage && label ? "img" : undefined}
+      aria-label={!hasImage ? label : undefined}
+      aria-hidden={!hasImage && !label ? "true" : undefined}
     >
-      {symbol}
+      {hasImage ? (
+        <img className={styles["icon__image"]} src={imageSrc} alt={imageAlt || label || ""} />
+      ) : (
+        symbol
+      )}
     </span>
   );
 }

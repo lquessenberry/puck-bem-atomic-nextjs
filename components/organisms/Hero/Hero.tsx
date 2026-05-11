@@ -11,6 +11,8 @@ export interface HeroProps {
   secondaryLabel: string;
   secondaryHref: string;
   align?: "left" | "center";
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function Hero({
@@ -22,9 +24,12 @@ export function Hero({
   secondaryLabel,
   secondaryHref,
   align = "left",
+  imageSrc,
+  imageAlt = "",
 }: HeroProps) {
   return (
     <section className={`${styles.hero} ${styles[`hero--${align}`]}`} aria-label={title}>
+      {imageSrc ? <img className={styles["hero__image"]} src={imageSrc} alt={imageAlt} /> : null}
       <Badge label={eyebrow} tone="neutral" />
       <h1 className={styles["hero__title"]}>{title}</h1>
       <p className={styles["hero__body"]}>{body}</p>

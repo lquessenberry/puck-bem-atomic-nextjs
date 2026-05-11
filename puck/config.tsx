@@ -47,6 +47,8 @@ type Props = {
     label: string;
     tone: "default" | "accent" | "muted";
     size: "sm" | "md" | "lg";
+    imageSrc: string;
+    imageAlt: string;
   };
   Button: {
     label: string;
@@ -65,11 +67,15 @@ type Props = {
     required: boolean;
     disabled: boolean;
     invalid: boolean;
+    imageSrc: string;
+    imageAlt: string;
   };
   Card: {
     title: string;
     body: string;
     elevated: boolean;
+    imageSrc: string;
+    imageAlt: string;
   };
   FeatureCard: {
     title: string;
@@ -86,6 +92,8 @@ type Props = {
     primaryActionHref: string;
     secondaryActionLabel: string;
     secondaryActionHref: string;
+    imageSrc: string;
+    imageAlt: string;
   };
   CtaBanner: {
     eyebrow: string;
@@ -95,11 +103,15 @@ type Props = {
     primaryHref: string;
     secondaryLabel: string;
     secondaryHref: string;
+    imageSrc: string;
+    imageAlt: string;
   };
   FeatureGrid: {
     title: string;
     columns: 2 | 3;
-    items: Array<{ title: string; description: string; icon: string }>;
+    items: Array<{ id: string; title: string; description: string; icon: string }>;
+    imageSrc: string;
+    imageAlt: string;
   };
   Hero: {
     eyebrow: string;
@@ -110,10 +122,14 @@ type Props = {
     secondaryLabel: string;
     secondaryHref: string;
     align: "left" | "center";
+    imageSrc: string;
+    imageAlt: string;
   };
   BottomNavigation: {
     ariaLabel: string;
-    items: Array<{ label: string; href: string; icon: string; active: boolean }>;
+    items: Array<{ id: string; label: string; href: string; icon: string; active: boolean }>;
+    imageSrc: string;
+    imageAlt: string;
   };
   Testimonial: {
     quote: string;
@@ -121,6 +137,8 @@ type Props = {
     role: string;
     company: string;
     rating: 1 | 2 | 3 | 4 | 5;
+    imageSrc: string;
+    imageAlt: string;
   };
   PricingTier: {
     name: string;
@@ -130,7 +148,9 @@ type Props = {
     featured: boolean;
     ctaLabel: string;
     ctaHref: string;
-    features: Array<{ text: string }>;
+    features: Array<{ id: string; text: string }>;
+    imageSrc: string;
+    imageAlt: string;
   };
   MobileHeader: {
     brand: string;
@@ -138,10 +158,14 @@ type Props = {
     menuHref: string;
     ctaLabel: string;
     ctaHref: string;
+    imageSrc: string;
+    imageAlt: string;
   };
   StatsSection: {
     title: string;
-    stats: Array<{ value: string; label: string }>;
+    stats: Array<{ id: string; value: string; label: string }>;
+    imageSrc: string;
+    imageAlt: string;
   };
 };
 
@@ -287,6 +311,8 @@ export const config: Config<
       fields: {
         symbol: { type: "text" },
         label: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         tone: {
           type: "select",
           options: [
@@ -307,6 +333,8 @@ export const config: Config<
       defaultProps: {
         symbol: "✨",
         label: "Sparkles",
+        imageSrc: "/images/placeholders/atoms/icon-grid.svg",
+        imageAlt: "Icon grid placeholder",
         tone: "accent",
         size: "md",
       },
@@ -350,6 +378,8 @@ export const config: Config<
         placeholder: { type: "text" },
         helperText: { type: "text" },
         value: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         type: {
           type: "select",
           options: [
@@ -377,6 +407,8 @@ export const config: Config<
         placeholder: "you@company.com",
         helperText: "We'll only use this to contact you about your account.",
         value: "",
+        imageSrc: "/images/placeholders/atoms/input-field.svg",
+        imageAlt: "Input field placeholder preview",
         type: "email",
         required: true,
         disabled: false,
@@ -388,6 +420,8 @@ export const config: Config<
       fields: {
         title: { type: "text" },
         body: { type: "textarea" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
         elevated: {
           type: "radio",
           options: [...yesNoOptions],
@@ -396,6 +430,8 @@ export const config: Config<
       defaultProps: {
         title: "Card title",
         body: "Reusable baseline card with tokenized surface and spacing.",
+        imageSrc: "/images/placeholders/atoms/card.svg",
+        imageAlt: "Card placeholder preview",
         elevated: true,
       },
       render: (props) => <Card {...props} />,
@@ -430,6 +466,8 @@ export const config: Config<
         primaryActionHref: { type: "text" },
         secondaryActionLabel: { type: "text" },
         secondaryActionHref: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
       },
       defaultProps: {
         title: "Swipe-first storytelling",
@@ -438,6 +476,8 @@ export const config: Config<
         primaryActionHref: "#",
         secondaryActionLabel: "Learn More",
         secondaryActionHref: "#",
+        imageSrc: "/images/placeholders/molecules/swipeable-card.svg",
+        imageAlt: "Swipeable card placeholder preview",
       },
       render: (props) => <SwipeableCard {...props} />,
     },
@@ -450,6 +490,8 @@ export const config: Config<
         primaryHref: { type: "text" },
         secondaryLabel: { type: "text" },
         secondaryHref: { type: "text" },
+        imageSrc: { type: "text" },
+        imageAlt: { type: "text" },
       },
       defaultProps: {
         eyebrow: "Open Source Starter",
@@ -459,6 +501,8 @@ export const config: Config<
         primaryHref: "#",
         secondaryLabel: "GitHub",
         secondaryHref: "https://github.com/lquessenberry/puck-bem-atomic-nextjs",
+        imageSrc: "/images/placeholders/molecules/cta-banner.svg",
+        imageAlt: "Call to action banner placeholder preview",
       },
       render: (props) => <CtaBanner {...props} />,
     },

@@ -7,6 +7,8 @@ export interface MobileHeaderProps {
   menuHref: string;
   ctaLabel: string;
   ctaHref: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function MobileHeader({
@@ -15,9 +17,14 @@ export function MobileHeader({
   menuHref,
   ctaLabel,
   ctaHref,
+  imageSrc,
+  imageAlt = "",
 }: MobileHeaderProps) {
   return (
     <header className={styles["mobile-header"]}>
+      {imageSrc ? (
+        <img className={styles["mobile-header__image"]} src={imageSrc} alt={imageAlt} />
+      ) : null}
       <a className={styles["mobile-header__brand"]} href="#" aria-label={`${brand} home`}>
         {brand}
       </a>

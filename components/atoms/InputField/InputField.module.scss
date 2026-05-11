@@ -4,6 +4,14 @@
   display: grid;
   gap: var(--spacing-2);
 
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-xs);
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: var(--spacing-0) solid var(--color-border);
+  }
+
   &__label {
     font-size: var(--typography-font-size-sm);
     font-weight: var(--typography-font-weight-semibold);

@@ -1,6 +1,7 @@
 import styles from "./BottomNavigation.module.scss";
 
 export interface BottomNavigationItem {
+  id: string;
   label: string;
   href: string;
   icon: string;
@@ -10,14 +11,24 @@ export interface BottomNavigationItem {
 export interface BottomNavigationProps {
   items: BottomNavigationItem[];
   ariaLabel?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export function BottomNavigation({ items, ariaLabel = "Bottom navigation" }: BottomNavigationProps) {
+export function BottomNavigation({
+  items,
+  ariaLabel = "Bottom navigation",
+  imageSrc,
+  imageAlt = "",
+}: BottomNavigationProps) {
   return (
     <nav className={styles["bottom-navigation"]} aria-label={ariaLabel}>
+      {imageSrc ? (
+        <img className={styles["bottom-navigation__image"]} src={imageSrc} alt={imageAlt} />
+      ) : null}
       <ul className={styles["bottom-navigation__list"]}>
-        {items.map((item, index) => (
-          <li key={`${item.href}-${item.label}`} className={styles["bottom-navigation__item"]}>
+        {items.map((item) => (
+          <li key={item.id} className={styles["bottom-navigation__item"]}>
             <a
               className={`${styles["bottom-navigation__link"]} ${item.active ? styles["bottom-navigation__link--active"] : ""}`.trim()}
               href={item.href}

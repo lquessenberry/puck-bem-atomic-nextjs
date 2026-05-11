@@ -10,6 +10,8 @@ export interface CtaBannerProps {
   primaryHref: string;
   secondaryLabel: string;
   secondaryHref: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function CtaBanner({
@@ -20,9 +22,12 @@ export function CtaBanner({
   primaryHref,
   secondaryLabel,
   secondaryHref,
+  imageSrc,
+  imageAlt = "",
 }: CtaBannerProps) {
   return (
     <section className={styles["cta-banner"]} aria-label="Call to action">
+      {imageSrc ? <img className={styles["cta-banner__image"]} src={imageSrc} alt={imageAlt} /> : null}
       <div className={styles["cta-banner__meta"]}>
         <Badge label={eyebrow} tone="neutral" />
       </div>

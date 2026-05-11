@@ -4,6 +4,15 @@
   position: sticky;
   inset-block-end: var(--spacing-4);
 
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-xs);
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: var(--spacing-0) solid var(--color-border);
+    margin-bottom: var(--spacing-3);
+  }
+
   &__list {
     list-style: none;
     display: grid;
@@ -11,6 +20,11 @@
     gap: var(--spacing-2);
     margin: 0;
     padding: var(--spacing-2);
+    transition:
+      transform var(--motion-duration-fast) var(--motion-easing-standard),
+      box-shadow var(--motion-duration-fast) var(--motion-easing-standard),
+      color var(--motion-duration-fast) var(--motion-easing-standard),
+      background-color var(--motion-duration-fast) var(--motion-easing-standard);
     border: var(--spacing-0) solid var(--color-border);
     border-radius: var(--radius-2xl);
     background: var(--color-surface-strong);
@@ -33,6 +47,16 @@
 
     &:focus-visible {
       @include focus-ring;
+    }
+
+    &:hover {
+      transform: translateY(calc(var(--spacing-1) * -1));
+      box-shadow: var(--shadow-sm);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
     }
 
     &--active {

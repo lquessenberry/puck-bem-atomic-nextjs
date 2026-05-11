@@ -8,6 +8,8 @@ export interface SwipeableCardProps {
   primaryActionHref: string;
   secondaryActionLabel: string;
   secondaryActionHref: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function SwipeableCard({
@@ -17,9 +19,14 @@ export function SwipeableCard({
   primaryActionHref,
   secondaryActionLabel,
   secondaryActionHref,
+  imageSrc,
+  imageAlt = "",
 }: SwipeableCardProps) {
   return (
     <article className={styles["swipeable-card"]} aria-label={title}>
+      {imageSrc ? (
+        <img className={styles["swipeable-card__image"]} src={imageSrc} alt={imageAlt} />
+      ) : null}
       <h3 className={styles["swipeable-card__title"]}>{title}</h3>
       <p className={styles["swipeable-card__body"]}>{body}</p>
       <div className={styles["swipeable-card__actions"]}>

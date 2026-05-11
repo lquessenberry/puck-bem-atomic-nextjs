@@ -3,6 +3,13 @@
   align-items: center;
   justify-content: center;
 
+  &__image {
+    inline-size: 1em;
+    block-size: 1em;
+    object-fit: contain;
+    display: block;
+  }
+
   &--default {
     color: var(--color-text);
   }
