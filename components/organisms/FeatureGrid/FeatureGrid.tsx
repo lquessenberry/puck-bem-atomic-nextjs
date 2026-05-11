@@ -22,7 +22,7 @@ export function FeatureGrid({ title, columns = 3, items }: FeatureGridProps) {
         className={`${styles["feature-grid__list"]} ${styles[`feature-grid__list--cols-${columns}`]}`}
       >
         {items.map((item, index) => (
-          <li key={`${item.title}-${index}`} className={styles["feature-grid__item"]}>
+          <li key={`${item.title}-${item.description}`} className={styles["feature-grid__item"]}>
             <span className={styles["feature-grid__icon"]} aria-hidden="true">
               {item.icon}
             </span>

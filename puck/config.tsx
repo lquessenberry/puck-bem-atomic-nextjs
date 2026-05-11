@@ -656,7 +656,7 @@ export const config: Config<
         stats: [
           { value: "3x", label: "Faster launch cycles" },
           { value: "95", label: "Lighthouse performance" },
-          { value: "48px", label: "Touch-target minimum" },
+          { value: "3rem", label: "Touch-target minimum" },
           { value: "4", label: "Built-in universes" },
         ],
       },

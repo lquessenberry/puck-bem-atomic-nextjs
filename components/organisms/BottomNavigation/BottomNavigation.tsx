@@ -17,7 +17,7 @@ export function BottomNavigation({ items, ariaLabel = "Bottom navigation" }: Bot
     <nav className={styles["bottom-navigation"]} aria-label={ariaLabel}>
       <ul className={styles["bottom-navigation__list"]}>
         {items.map((item, index) => (
-          <li key={`${item.label}-${index}`} className={styles["bottom-navigation__item"]}>
+          <li key={`${item.href}-${item.label}`} className={styles["bottom-navigation__item"]}>
             <a
               className={`${styles["bottom-navigation__link"]} ${item.active ? styles["bottom-navigation__link--active"] : ""}`.trim()}
               href={item.href}

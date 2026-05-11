@@ -21,7 +21,7 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <article className={`${styles["feature-card"]} ${highlighted ? styles["feature-card--highlighted"] : ""}`.trim()} aria-label={title}>
-      <Icon symbol={icon} size="lg" tone="accent" />
+      <Icon symbol={icon} size="lg" tone="accent" label={`${title} icon`} />
       <h3 className={styles["feature-card__title"]}>{title}</h3>
       <p className={styles["feature-card__description"]}>{description}</p>
       <Button label={ctaLabel} href={ctaHref} variant={highlighted ? "primary" : "secondary"} />

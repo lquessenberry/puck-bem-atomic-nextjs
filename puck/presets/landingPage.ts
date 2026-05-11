@@ -37,7 +37,7 @@ export const landingPagePreset = {
         stats: [
           { value: "3x", label: "Faster launch velocity" },
           { value: "4", label: "Built-in design universes" },
-          { value: "48px", label: "Touch target baseline" },
+          { value: "3rem", label: "Min tap target" },
           { value: "100%", label: "Token-driven components" },
         ],
       },

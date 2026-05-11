@@ -33,7 +33,7 @@ export function PricingTier({
       <Button label={ctaLabel} href={ctaHref} variant={featured ? "primary" : "secondary"} fullWidth />
       <ul className={styles["pricing-tier__features"]}>
         {features.map((feature, index) => (
-          <li key={`${feature}-${index}`} className={styles["pricing-tier__feature"]}>
+          <li key={feature} className={styles["pricing-tier__feature"]}>
             {feature}
           </li>
         ))}
