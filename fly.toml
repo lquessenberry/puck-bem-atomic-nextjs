@@ -1,9 +1,25 @@
-app = "puck-bem-atomic-nextjs"
-primary_region = "ord"
+# fly.toml app configuration file generated for puck-bem-atomic-nextjs on 2026-05-11T01:35:22Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'puck-bem-atomic-nextjs'
+primary_region = 'ams'
+
+[build]
+
+[env]
+  HOSTNAME = '0.0.0.0'
+  PORT = '3000'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 1
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 512
