@@ -1,17 +1,17 @@
 .text {
-  margin: 0 0 var(--space-md);
-  line-height: var(--line-height-body);
+  margin: 0 0 var(--spacing-4);
+  line-height: var(--typography-line-height-relaxed);
 
   &--sm {
-    font-size: 0.875rem;
+    font-size: var(--typography-font-size-sm);
   }
 
   &--md {
-    font-size: 1rem;
+    font-size: var(--typography-font-size-md);
   }
 
   &--lg {
-    font-size: 1.125rem;
+    font-size: var(--typography-font-size-lg);
   }
 
   &--default {

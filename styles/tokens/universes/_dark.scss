@@ -1,0 +1,23 @@
+$dark-tokens: (
+  color: (
+    background: #0b1220,
+    surface: #111827,
+    surface-strong: #1f2937,
+    text: #f9fafb,
+    text-muted: #cbd5e1,
+    border: #334155,
+    primary: #60a5fa,
+    primary-contrast: #0b1220,
+    secondary: #a78bfa,
+    accent: #2dd4bf,
+    success: #22c55e,
+    warning: #f59e0b,
+    danger: #ef4444,
+  ),
+  shadow: (
+    xs: 0 1px 2px rgb(0 0 0 / 32%),
+    sm: 0 3px 10px rgb(0 0 0 / 36%),
+    md: 0 12px 28px rgb(0 0 0 / 45%),
+    lg: 0 24px 42px rgb(0 0 0 / 54%),
+  ),
+);

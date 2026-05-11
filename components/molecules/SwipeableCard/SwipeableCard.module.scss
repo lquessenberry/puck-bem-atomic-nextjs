@@ -1,0 +1,28 @@
+.swipeable-card {
+  display: grid;
+  gap: var(--spacing-4);
+  min-inline-size: var(--layout-content-width-md);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-2xl);
+  border: var(--spacing-0) solid var(--color-border);
+  background: var(--color-surface-strong);
+  box-shadow: var(--shadow-md);
+  scroll-snap-align: center;
+
+  &__title {
+    margin: 0;
+    font-size: var(--typography-font-size-2xl);
+    color: var(--color-text);
+  }
+
+  &__body {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+}

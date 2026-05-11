@@ -3,7 +3,7 @@
 import React, { createContext, useContext } from "react";
 import styles from "./ThemeProvider.module.scss";
 
-export type Theme = "light" | "dark" | "brand";
+export type Theme = "light" | "dark" | "brand" | "high-contrast";
 export type ContentWidth = "md" | "lg" | "xl";
 export type VerticalSpacing = "compact" | "comfortable" | "spacious";
 
@@ -36,6 +36,7 @@ export function ThemeProvider({
     <ThemeContext.Provider value={{ theme, contentWidth, verticalSpacing }}>
       <div
         data-theme={theme}
+        data-universe={theme}
         data-content-width={contentWidth}
         data-vertical-spacing={verticalSpacing}
         className={styles["theme-provider"]}

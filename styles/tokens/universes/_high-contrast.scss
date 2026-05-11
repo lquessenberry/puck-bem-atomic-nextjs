@@ -1,0 +1,23 @@
+$high-contrast-tokens: (
+  color: (
+    background: #000000,
+    surface: #111111,
+    surface-strong: #000000,
+    text: #ffffff,
+    text-muted: #f5f5f5,
+    border: #ffffff,
+    primary: #00ffff,
+    primary-contrast: #000000,
+    secondary: #ffff00,
+    accent: #ff00ff,
+    success: #00ff00,
+    warning: #ffff00,
+    danger: #ff3b30,
+  ),
+  shadow: (
+    xs: 0 0 0 1px rgb(255 255 255 / 60%),
+    sm: 0 0 0 2px rgb(255 255 255 / 60%),
+    md: 0 0 0 3px rgb(255 255 255 / 70%),
+    lg: 0 0 0 4px rgb(255 255 255 / 80%),
+  ),
+);

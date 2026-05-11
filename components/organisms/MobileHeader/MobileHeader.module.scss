@@ -1,0 +1,24 @@
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-2xl);
+  border: var(--spacing-0) solid var(--color-border);
+  background: var(--color-surface-strong);
+  box-shadow: var(--shadow-sm);
+
+  &__brand {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: var(--typography-font-weight-bold);
+    font-size: var(--typography-font-size-lg);
+  }
+
+  &__nav {
+    display: flex;
+    gap: var(--spacing-2);
+    align-items: center;
+  }
+}

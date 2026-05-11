@@ -1,13 +1,13 @@
 .theme-provider {
   min-height: 100vh;
-  background: var(--color-bg);
+  background: var(--color-background);
   color: var(--color-text);
 
   &__content {
     display: grid;
-    gap: var(--section-spacing, 1.5rem);
-    width: min(100% - 2rem, var(--container-max));
+    gap: var(--section-spacing, var(--layout-section-spacing-comfortable));
+    width: min(100% - var(--spacing-8), var(--container-max));
     margin-inline: auto;
-    padding-block: var(--space-xl);
+    padding-block: var(--spacing-8);
   }
 }

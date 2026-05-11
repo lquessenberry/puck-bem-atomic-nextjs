@@ -1,0 +1,25 @@
+$brand-tokens: (
+  color: (
+    background: #fff8fc,
+    surface: #fff0f8,
+    surface-strong: #ffffff,
+    text: #3b0a2a,
+    text-muted: #7a365f,
+    border: #f3a9d5,
+    primary: #ff2d55,
+    primary-contrast: #ffffff,
+    secondary: #00d4ff,
+    accent: #ffd700,
+    success: #0f9a5b,
+    warning: #d97706,
+    danger: #dc2626,
+  ),
+  shadow: (
+    sm: 0 4px 14px rgb(255 45 85 / 18%),
+    md: 0 12px 30px rgb(255 45 85 / 24%),
+    lg: 0 24px 42px rgb(255 45 85 / 30%),
+  ),
+  radius: (
+    full: 9999px,
+  ),
+);

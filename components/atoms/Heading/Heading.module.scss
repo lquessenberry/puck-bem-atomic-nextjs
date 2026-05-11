@@ -1,22 +1,24 @@
 .heading {
-  margin: 0 0 var(--space-md);
-  font-family: var(--font-heading);
-  line-height: var(--line-height-heading);
+  margin: 0 0 var(--spacing-4);
+  font-family: var(--typography-font-family-heading);
+  line-height: var(--typography-line-height-tight);
+  letter-spacing: var(--typography-letter-spacing-tight);
+  color: var(--color-text);
 
   &--h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--typography-font-size-5xl);
   }
 
   &--h2 {
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-size: var(--typography-font-size-4xl);
   }
 
   &--h3 {
-    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+    font-size: var(--typography-font-size-3xl);
   }
 
   &--h4 {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-size: var(--typography-font-size-2xl);
   }
 
   &--align-left {

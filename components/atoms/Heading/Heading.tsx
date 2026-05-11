@@ -9,11 +9,5 @@ export interface HeadingProps {
 export function Heading({ text, level = "h2", align = "left" }: HeadingProps) {
   const Tag = level;
 
-  return (
-    <Tag
-      className={`${styles.heading} ${styles[`heading--${level}`]} ${styles[`heading--align-${align}`]}`}
-    >
-      {text}
-    </Tag>
-  );
+  return <Tag className={`${styles.heading} ${styles[`heading--${level}`]} ${styles[`heading--align-${align}`]}`}>{text}</Tag>;
 }

@@ -2,7 +2,7 @@
 
 .button {
   @include button-base;
-  padding: 0.625rem 1rem;
+  padding-inline: var(--spacing-4);
 
   &--full-width {
     width: 100%;

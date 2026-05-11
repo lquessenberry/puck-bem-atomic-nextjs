@@ -1,7 +1,7 @@
 .card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  border: var(--spacing-0) solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
   background-color: var(--color-surface-strong);
 
   &--elevated {
@@ -9,15 +9,15 @@
   }
 
   &__title {
-    margin: 0 0 var(--space-sm);
-    font-size: 1.25rem;
-    font-weight: 700;
+    margin: 0 0 var(--spacing-2);
+    font-size: var(--typography-font-size-xl);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text);
   }
 
   &__body {
     margin: 0;
     color: var(--color-text-muted);
-    line-height: var(--line-height-body);
+    line-height: var(--typography-line-height-relaxed);
   }
 }

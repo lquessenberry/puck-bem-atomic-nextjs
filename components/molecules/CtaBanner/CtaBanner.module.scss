@@ -1,32 +1,32 @@
 .cta-banner {
-  padding: var(--space-xl);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  border: var(--spacing-0) solid var(--color-border);
+  border-radius: var(--radius-2xl);
   background: linear-gradient(
-    140deg,
-    var(--color-surface-strong) 0%,
-    color-mix(in srgb, var(--color-primary), var(--color-surface-strong) 94%) 100%
+    to right,
+    var(--color-surface-strong),
+    color-mix(in srgb, var(--color-primary), var(--color-surface-strong) 88%)
   );
 
   &__meta {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--spacing-3);
   }
 
   &__title {
-    margin: 0 0 var(--space-sm);
+    margin: 0 0 var(--spacing-3);
     color: var(--color-text);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: var(--typography-font-size-4xl);
   }
 
   &__body {
-    margin: 0 0 var(--space-lg);
+    margin: 0 0 var(--spacing-6);
     color: var(--color-text-muted);
-    max-width: 60ch;
+    max-inline-size: var(--layout-content-width-md);
   }
 
   &__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm);
+    gap: var(--spacing-3);
   }
 }

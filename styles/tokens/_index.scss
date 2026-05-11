@@ -1,0 +1,51 @@
+@use "sass:list";
+@use "sass:map";
+@use "./base/spacing" as spacing;
+@use "./base/typography" as typography;
+@use "./base/radii" as radii;
+@use "./semantic/motion" as motion;
+@use "./semantic/color-semantic" as semantic-colors;
+@use "./universes/light" as light;
+@use "./universes/dark" as dark;
+@use "./universes/brand" as brand;
+@use "./universes/high-contrast" as high-contrast;
+
+$base-tokens: (
+  spacing: spacing.$spacing-tokens,
+  layout: spacing.$layout-tokens,
+  typography: typography.$typography-tokens,
+  radius: radii.$radii-tokens,
+  motion: motion.$motion-tokens,
+  shadow: motion.$shadow-tokens,
+);
+
+$universe-tokens: (
+  light: map.deep-merge(map.deep-merge($base-tokens, light.$light-tokens), semantic-colors.$semantic-color-tokens),
+  dark: map.deep-merge(map.deep-merge($base-tokens, dark.$dark-tokens), semantic-colors.$semantic-color-tokens),
+  brand: map.deep-merge(map.deep-merge($base-tokens, brand.$brand-tokens), semantic-colors.$semantic-color-tokens),
+  high-contrast: map.deep-merge(map.deep-merge($base-tokens, high-contrast.$high-contrast-tokens), semantic-colors.$semantic-color-tokens),
+);
+
+$universe-names: map.keys($universe-tokens);
+
+@mixin emit-token-map($token-map, $prefix: null) {
+  @each $key, $value in $token-map {
+    $token-name: if($prefix == null, "#{$key}", "#{$prefix}-#{$key}");
+
+    @if type-of($value) == "map" {
+      @include emit-token-map($value, $token-name);
+    } @else {
+      --#{$token-name}: #{$value};
+    }
+  }
+}
+
+@mixin generate-universe($universe-name) {
+  $token-set: map.get($universe-tokens, $universe-name);
+
+  @if $token-set == null {
+    @error "Unknown universe `#{$universe-name}`";
+  }
+
+  @include emit-token-map($token-set);
+}
