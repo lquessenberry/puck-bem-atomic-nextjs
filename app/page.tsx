@@ -2,21 +2,20 @@
 
 import { Puck } from "@measured/puck";
 import "@measured/puck/puck.css";
-import { puckConfig } from "../puck/config";
-import type { Data } from "@measured/puck";
+import { config } from "@/puck/config";
 
-const initialData: Data = {
+const initialData = {
   content: [],
   root: { props: {} },
 };
 
-export default function EditorPage() {
+export default function Page() {
   return (
     <Puck
-      config={puckConfig}
+      config={config}
       data={initialData}
       onPublish={async (data) => {
-        console.log("Published:", JSON.stringify(data, null, 2));
+        console.log("Published:", data);
       }}
     />
   );
