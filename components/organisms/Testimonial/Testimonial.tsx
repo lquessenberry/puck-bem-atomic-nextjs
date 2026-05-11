@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Testimonial.module.scss";
 
 export interface TestimonialProps {
@@ -23,7 +24,16 @@ export function Testimonial({
 
   return (
     <figure className={styles.testimonial}>
-      {imageSrc ? <img className={styles["testimonial__image"]} src={imageSrc} alt={imageAlt} /> : null}
+      {imageSrc ? (
+        <Image
+          className={styles["testimonial__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+      ) : null}
       <figcaption className={styles["testimonial__rating"]} aria-label={`${rating} out of 5 stars`}>
         {stars}
       </figcaption>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./InputField.module.scss";
 
 export interface InputFieldProps {
@@ -31,7 +32,14 @@ export function InputField({
   return (
     <div className={styles["input-field"]}>
       {imageSrc ? (
-        <img className={styles["input-field__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["input-field__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
       ) : null}
       <label htmlFor={fieldId} className={styles["input-field__label"]}>
         {label}

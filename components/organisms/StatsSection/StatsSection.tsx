@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./StatsSection.module.scss";
 
 export interface StatItem {
@@ -17,7 +18,14 @@ export function StatsSection({ title, stats, imageSrc, imageAlt = "" }: StatsSec
   return (
     <section className={styles["stats-section"]} aria-label={title}>
       {imageSrc ? (
-        <img className={styles["stats-section__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["stats-section__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 1024px"
+        />
       ) : null}
       <h2 className={styles["stats-section__title"]}>{title}</h2>
       <ul className={styles["stats-section__list"]}>

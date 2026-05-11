@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/atoms/Button/Button";
 import styles from "./PricingTier.module.scss";
 
@@ -29,7 +30,14 @@ export function PricingTier({
   return (
     <section className={`${styles["pricing-tier"]} ${featured ? styles["pricing-tier--featured"] : ""}`.trim()} aria-label={`${name} pricing tier`}>
       {imageSrc ? (
-        <img className={styles["pricing-tier__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["pricing-tier__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
       ) : null}
       <h3 className={styles["pricing-tier__name"]}>{name}</h3>
       <p className={styles["pricing-tier__price"]}>

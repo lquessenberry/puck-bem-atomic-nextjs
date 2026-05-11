@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/atoms/Button/Button";
 import styles from "./SwipeableCard.module.scss";
 
@@ -25,7 +26,14 @@ export function SwipeableCard({
   return (
     <article className={styles["swipeable-card"]} aria-label={title}>
       {imageSrc ? (
-        <img className={styles["swipeable-card__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["swipeable-card__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
       ) : null}
       <h3 className={styles["swipeable-card__title"]}>{title}</h3>
       <p className={styles["swipeable-card__body"]}>{body}</p>

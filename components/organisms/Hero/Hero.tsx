@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/atoms/Badge/Badge";
 import { Button } from "@/components/atoms/Button/Button";
 import styles from "./Hero.module.scss";
@@ -29,7 +30,16 @@ export function Hero({
 }: HeroProps) {
   return (
     <section className={`${styles.hero} ${styles[`hero--${align}`]}`} aria-label={title}>
-      {imageSrc ? <img className={styles["hero__image"]} src={imageSrc} alt={imageAlt} /> : null}
+      {imageSrc ? (
+        <Image
+          className={styles["hero__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 1280px"
+        />
+      ) : null}
       <Badge label={eyebrow} tone="neutral" />
       <h1 className={styles["hero__title"]}>{title}</h1>
       <p className={styles["hero__body"]}>{body}</p>

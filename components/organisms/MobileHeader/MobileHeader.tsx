@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/atoms/Button/Button";
 import styles from "./MobileHeader.module.scss";
 
@@ -23,7 +24,14 @@ export function MobileHeader({
   return (
     <header className={styles["mobile-header"]}>
       {imageSrc ? (
-        <img className={styles["mobile-header__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["mobile-header__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
       ) : null}
       <a className={styles["mobile-header__brand"]} href="#" aria-label={`${brand} home`}>
         {brand}

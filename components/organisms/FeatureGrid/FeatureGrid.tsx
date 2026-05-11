@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./FeatureGrid.module.scss";
 
 export interface FeatureItem {
@@ -19,7 +20,14 @@ export function FeatureGrid({ title, columns = 3, items, imageSrc, imageAlt = ""
   return (
     <section className={styles["feature-grid"]} aria-labelledby="feature-grid-title">
       {imageSrc ? (
-        <img className={styles["feature-grid__image"]} src={imageSrc} alt={imageAlt} />
+        <Image
+          className={styles["feature-grid__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 1024px"
+        />
       ) : null}
       <h2 id="feature-grid-title" className={styles["feature-grid__title"]}>
         {title}

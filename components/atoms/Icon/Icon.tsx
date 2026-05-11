@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Icon.module.scss";
 
 export interface IconProps {
@@ -27,7 +28,14 @@ export function Icon({
       aria-hidden={!hasImage && !label ? "true" : undefined}
     >
       {hasImage ? (
-        <img className={styles["icon__image"]} src={imageSrc} alt={imageAlt || label || ""} />
+        <Image
+          className={styles["icon__image"]}
+          src={imageSrc}
+          alt={imageAlt || label || ""}
+          width={64}
+          height={64}
+          sizes="64px"
+        />
       ) : (
         symbol
       )}

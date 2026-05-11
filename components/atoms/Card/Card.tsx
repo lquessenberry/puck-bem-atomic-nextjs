@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Card.module.scss";
 
 export interface CardProps {
@@ -14,7 +15,16 @@ export function Card({ title, body, elevated = true, imageSrc, imageAlt = "" }: 
       className={`${styles.card} ${elevated ? styles["card--elevated"] : ""}`.trim()}
       aria-label={title}
     >
-      {imageSrc ? <img className={styles["card__image"]} src={imageSrc} alt={imageAlt} /> : null}
+      {imageSrc ? (
+        <Image
+          className={styles["card__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+      ) : null}
       <h3 className={styles["card__title"]}>{title}</h3>
       <p className={styles["card__body"]}>{body}</p>
     </article>

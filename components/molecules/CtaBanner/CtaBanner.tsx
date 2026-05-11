@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/atoms/Button/Button";
 import { Badge } from "@/components/atoms/Badge/Badge";
 import styles from "./CtaBanner.module.scss";
@@ -27,7 +28,16 @@ export function CtaBanner({
 }: CtaBannerProps) {
   return (
     <section className={styles["cta-banner"]} aria-label="Call to action">
-      {imageSrc ? <img className={styles["cta-banner__image"]} src={imageSrc} alt={imageAlt} /> : null}
+      {imageSrc ? (
+        <Image
+          className={styles["cta-banner__image"]}
+          src={imageSrc}
+          alt={imageAlt}
+          width={1200}
+          height={630}
+          sizes="(max-width: 768px) 100vw, 1024px"
+        />
+      ) : null}
       <div className={styles["cta-banner__meta"]}>
         <Badge label={eyebrow} tone="neutral" />
       </div>
