@@ -1,8 +1,8 @@
 $typography-tokens: (
   font-family: (
-    body: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    heading: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace,
+    body: (Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif),
+    heading: (Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif),
+    mono: ("JetBrains Mono", "SFMono-Regular", Menlo, monospace),
   ),
   font-size: (
     xs: 0.75rem,

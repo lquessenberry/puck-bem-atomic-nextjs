@@ -26,8 +26,6 @@
   --font-heading: var(--typography-font-family-heading);
   --line-height-body: var(--typography-line-height-relaxed);
   --line-height-heading: var(--typography-line-height-tight);
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
 }
 
 @each $name in tokens.$universe-names {

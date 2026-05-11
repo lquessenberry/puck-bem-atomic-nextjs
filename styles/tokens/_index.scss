@@ -1,5 +1,5 @@
-@use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 @use "./base/spacing" as spacing;
 @use "./base/typography" as typography;
 @use "./base/radii" as radii;
@@ -30,9 +30,15 @@ $universe-names: map.keys($universe-tokens);
 
 @mixin emit-token-map($token-map, $prefix: null) {
   @each $key, $value in $token-map {
-    $token-name: if($prefix == null, "#{$key}", "#{$prefix}-#{$key}");
+    $token-name: null;
 
-    @if type-of($value) == "map" {
+    @if $prefix == null {
+      $token-name: "#{$key}";
+    } @else {
+      $token-name: "#{$prefix}-#{$key}";
+    }
+
+    @if meta.type-of($value) == "map" {
       @include emit-token-map($value, $token-name);
     } @else {
       --#{$token-name}: #{$value};
