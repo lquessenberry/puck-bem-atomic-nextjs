@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420" fill="none">
+  <!-- Three pricing cards -->
+  <!-- Card 1 -->
+  <rect x="40" y="60" width="220" height="320" rx="16" fill="#FAFAFA" stroke="#2C3E50" stroke-width="10"/>
+  <rect x="70" y="90" width="160" height="30" rx="6" fill="#2C3E50"/>
+  
+  <!-- Card 2 (Popular) -->
+  <rect x="290" y="40" width="240" height="340" rx="16" fill="#FAFAFA" stroke="#3B82F6" stroke-width="14"/>
+  <rect x="340" y="70" width="140" height="34" rx="6" fill="#3B82F6"/>
+  <text x="370" y="92" fill="#FFFFFF" font-family="system-ui" font-size="14" font-weight="600">Popular</text>
+  
+  <!-- Card 3 -->
+  <rect x="560" y="60" width="220" height="320" rx="16" fill="#FAFAFA" stroke="#2C3E50" stroke-width="10"/>
+  
+  <!-- Pricing labels -->
+  <rect x="100" y="150" width="100" height="24" rx="4" fill="#2C3E50"/>
+  <rect x="350" y="150" width="100" height="24" rx="4" fill="#2C3E50"/>
+  <rect x="620" y="150" width="100" height="24" rx="4" fill="#2C3E50"/>
+</svg>
