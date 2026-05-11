@@ -1,0 +1,50 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.input-field {
+  display: grid;
+  gap: var(--spacing-2);
+
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-xs);
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: var(--spacing-0) solid var(--color-border);
+  }
+
+  &__label {
+    font-size: var(--typography-font-size-sm);
+    font-weight: var(--typography-font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  &__control {
+    min-height: var(--layout-touch-target-min);
+    border-radius: var(--radius-lg);
+    border: var(--spacing-0) solid var(--color-border);
+    padding-inline: var(--spacing-3);
+    background: var(--color-surface-strong);
+    color: var(--color-text);
+    transition:
+      border-color var(--motion-duration-fast) var(--motion-easing-standard),
+      box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+
+    &--invalid {
+      border-color: var(--color-danger);
+    }
+  }
+
+  &__helper {
+    margin: 0;
+    font-size: var(--typography-font-size-sm);
+    color: var(--color-text-muted);
+  }
+}

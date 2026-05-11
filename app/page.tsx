@@ -2,14 +2,13 @@
 
 import { Puck } from "@measured/puck";
 import "@measured/puck/puck.css";
-import { config } from "@/puck/config";
-
-const initialData = {
-  content: [],
-  root: { props: {} },
-};
+import type { Data } from "@measured/puck";
+import { config, type PuckProps, type PuckRootProps } from "@/puck/config";
+import { defaultPuckData } from "@/puck/defaults";
 
 export default function Page() {
+  const initialData: Partial<Data<PuckProps, PuckRootProps>> = defaultPuckData;
+
   return (
     <Puck
       config={config}

@@ -1,0 +1,77 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.bottom-navigation {
+  position: sticky;
+  inset-block-end: var(--spacing-4);
+
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-xs);
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: var(--spacing-0) solid var(--color-border);
+    margin-bottom: var(--spacing-3);
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--spacing-2);
+    margin: 0;
+    padding: var(--spacing-2);
+    transition:
+      transform var(--motion-duration-fast) var(--motion-easing-standard),
+      box-shadow var(--motion-duration-fast) var(--motion-easing-standard),
+      color var(--motion-duration-fast) var(--motion-easing-standard),
+      background-color var(--motion-duration-fast) var(--motion-easing-standard);
+    border: var(--spacing-0) solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-surface-strong);
+    box-shadow: var(--shadow-md);
+  }
+
+  &__item {
+    min-width: 0;
+  }
+
+  &__link {
+    min-height: var(--layout-touch-target-min);
+    border-radius: var(--radius-lg);
+    display: grid;
+    place-items: center;
+    gap: var(--spacing-1);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: var(--spacing-2);
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+
+    &:hover {
+      transform: translateY(calc(var(--spacing-1) * -1));
+      box-shadow: var(--shadow-sm);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    &--active {
+      background: color-mix(in srgb, var(--color-primary), var(--color-surface) 82%);
+      color: var(--color-primary);
+    }
+  }
+
+  &__icon {
+    font-size: var(--typography-font-size-lg);
+    line-height: var(--typography-line-height-tight);
+  }
+
+  &__label {
+    font-size: var(--typography-font-size-xs);
+    font-weight: var(--typography-font-weight-medium);
+  }
+}

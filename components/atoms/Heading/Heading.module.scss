@@ -1,0 +1,35 @@
+.heading {
+  margin: 0 0 var(--spacing-4);
+  font-family: var(--typography-font-family-heading);
+  line-height: var(--typography-line-height-tight);
+  letter-spacing: var(--typography-letter-spacing-tight);
+  color: var(--color-text);
+
+  &--h1 {
+    font-size: var(--typography-font-size-5xl);
+  }
+
+  &--h2 {
+    font-size: var(--typography-font-size-4xl);
+  }
+
+  &--h3 {
+    font-size: var(--typography-font-size-3xl);
+  }
+
+  &--h4 {
+    font-size: var(--typography-font-size-2xl);
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,36 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &__image {
+    inline-size: 1em;
+    block-size: 1em;
+    object-fit: contain;
+    display: block;
+  }
+
+  &--default {
+    color: var(--color-text);
+  }
+
+  &--accent {
+    color: var(--color-primary);
+  }
+
+  &--muted {
+    color: var(--color-text-muted);
+  }
+
+  &--sm {
+    font-size: var(--typography-font-size-sm);
+  }
+
+  &--md {
+    font-size: var(--typography-font-size-lg);
+  }
+
+  &--lg {
+    font-size: var(--typography-font-size-2xl);
+  }
+}

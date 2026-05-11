@@ -1,0 +1,24 @@
+.text {
+  margin: 0 0 var(--spacing-4);
+  line-height: var(--typography-line-height-relaxed);
+
+  &--sm {
+    font-size: var(--typography-font-size-sm);
+  }
+
+  &--md {
+    font-size: var(--typography-font-size-md);
+  }
+
+  &--lg {
+    font-size: var(--typography-font-size-lg);
+  }
+
+  &--default {
+    color: var(--color-text);
+  }
+
+  &--muted {
+    color: var(--color-text-muted);
+  }
+}

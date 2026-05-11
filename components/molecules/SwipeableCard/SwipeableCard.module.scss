@@ -1,0 +1,50 @@
+.swipeable-card {
+  display: grid;
+  gap: var(--spacing-4);
+  min-inline-size: var(--layout-content-width-md);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-2xl);
+  border: var(--spacing-0) solid var(--color-border);
+  background: var(--color-surface-strong);
+  box-shadow: var(--shadow-md);
+  scroll-snap-align: center;
+  transition:
+    transform var(--motion-duration-fast) var(--motion-easing-standard),
+    box-shadow var(--motion-duration-fast) var(--motion-easing-standard),
+    border-color var(--motion-duration-fast) var(--motion-easing-standard);
+
+  &:hover {
+    transform: translateY(calc(var(--spacing-1) * -1));
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+  }
+
+  &__image {
+    width: 100%;
+    max-height: var(--layout-content-width-sm);
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: var(--spacing-0) solid var(--color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--typography-font-size-2xl);
+    color: var(--color-text);
+  }
+
+  &__body {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+}

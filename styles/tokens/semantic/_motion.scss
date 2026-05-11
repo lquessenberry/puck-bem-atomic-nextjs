@@ -1,0 +1,18 @@
+$motion-tokens: (
+  duration: (
+    instant: 80ms,
+    fast: 160ms,
+    normal: 240ms,
+  ),
+  easing: (
+    standard: cubic-bezier(0.2, 0, 0, 1),
+    emphasized: cubic-bezier(0.22, 1, 0.36, 1),
+  ),
+);
+
+$shadow-tokens: (
+  xs: 0 1px 2px rgb(0 0 0 / 8%),
+  sm: 0 2px 8px rgb(0 0 0 / 10%),
+  md: 0 10px 24px rgb(0 0 0 / 14%),
+  lg: 0 20px 36px rgb(0 0 0 / 18%),
+);
