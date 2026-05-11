@@ -1,0 +1,24 @@
+.text {
+  margin: 0 0 var(--space-md);
+  line-height: var(--line-height-body);
+
+  &--sm {
+    font-size: 0.875rem;
+  }
+
+  &--md {
+    font-size: 1rem;
+  }
+
+  &--lg {
+    font-size: 1.125rem;
+  }
+
+  &--default {
+    color: var(--color-text);
+  }
+
+  &--muted {
+    color: var(--color-text-muted);
+  }
+}

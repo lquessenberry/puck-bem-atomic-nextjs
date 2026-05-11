@@ -1,19 +1,19 @@
-"use client";
-
 import styles from "./Card.module.scss";
-import { useTheme } from "../../ThemeProvider";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   body: string;
+  elevated?: boolean;
 }
 
-export function Card({ title, body }: CardProps) {
-  const theme = useTheme();
+export function Card({ title, body, elevated = true }: CardProps) {
   return (
-    <div className={`${styles.card} ${styles[`card--theme-${theme}`]}`}>
-      <h2 className={styles.card__title}>{title}</h2>
-      <p className={styles.card__body}>{body}</p>
-    </div>
+    <article
+      className={`${styles.card} ${elevated ? styles["card--elevated"] : ""}`.trim()}
+      aria-label={title}
+    >
+      <h3 className={styles["card__title"]}>{title}</h3>
+      <p className={styles["card__body"]}>{body}</p>
+    </article>
   );
 }

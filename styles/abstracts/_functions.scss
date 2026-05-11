@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "./tokens";
+
+@function bp($name) {
+  @return map.get(tokens.$breakpoints, $name);
+}
+
+@function container($name) {
+  @return map.get(tokens.$container-widths, $name);
+}
+
+@function spacing($name) {
+  @return map.get(tokens.$vertical-spacing, $name);
+}

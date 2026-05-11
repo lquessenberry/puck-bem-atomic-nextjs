@@ -1,47 +1,23 @@
 .card {
-  --card-bg: #fff;
-  --card-border: #eaeaea;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --card-title-color: #111;
-  --card-body-color: #555;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  background-color: var(--color-surface-strong);
 
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: var(--card-bg);
-  box-shadow: 0 2px 8px var(--card-shadow);
+  &--elevated {
+    box-shadow: var(--shadow-md);
+  }
 
   &__title {
-    margin: 0 0 0.75rem;
+    margin: 0 0 var(--space-sm);
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--card-title-color);
+    color: var(--color-text);
   }
 
   &__body {
     margin: 0;
-    font-size: 1rem;
-    color: var(--card-body-color);
-    line-height: 1.6;
-  }
-
-  &--theme-light {
-    // default light styles — no overrides needed
-  }
-
-  &--theme-dark {
-    --card-bg: #1a1a2e;
-    --card-border: rgba(255, 255, 255, 0.1);
-    --card-shadow: rgba(0, 0, 0, 0.4);
-    --card-title-color: #e0e0e0;
-    --card-body-color: #aaa;
-  }
-
-  &--theme-brand {
-    --card-bg: #fff0f8;
-    --card-border: #ff00aa;
-    --card-shadow: rgba(255, 0, 170, 0.15);
-    --card-title-color: #cc0088;
-    --card-body-color: #880055;
+    color: var(--color-text-muted);
+    line-height: var(--line-height-body);
   }
 }

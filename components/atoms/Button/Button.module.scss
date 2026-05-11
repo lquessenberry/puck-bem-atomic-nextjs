@@ -1,42 +1,27 @@
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1.25rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
+@use "../../../styles/abstracts/mixins" as *;
 
-  &:hover {
-    opacity: 0.85;
+.button {
+  @include button-base;
+  padding: 0.625rem 1rem;
+
+  &--full-width {
+    width: 100%;
   }
 
   &--primary {
-    background-color: #0070f3;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
   }
 
   &--secondary {
-    background-color: #eaeaea;
-    color: #333;
+    background: var(--color-surface-strong);
+    color: var(--color-text);
+    border-color: var(--color-border);
   }
 
-  &--theme-light {
-    // default light styles — no overrides needed
-  }
-
-  &--theme-dark {
-    background-color: #1a1a2e;
-    color: #e0e0e0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  &--theme-brand {
-    background-color: #ff00aa;
-    color: #fff;
-    border: none;
+  &--ghost {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
   }
 }

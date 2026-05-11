@@ -1,0 +1,11 @@
+[data-theme] .Puck {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+[data-theme] .Puck button,
+[data-theme] .Puck input,
+[data-theme] .Puck select,
+[data-theme] .Puck textarea {
+  font-family: var(--font-body);
+}
