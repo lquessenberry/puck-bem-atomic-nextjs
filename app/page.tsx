@@ -1,10 +1,10 @@
 "use client";
 
-import { Puck } from "@measured/puck";
-import "@measured/puck/puck.css";
-import type { Data } from "@measured/puck";
 import { config, type PuckProps, type PuckRootProps } from "@/puck/config";
 import { defaultPuckData } from "@/puck/defaults";
+import type { Data } from "@puckeditor/core";
+import { Puck } from "@puckeditor/core";
+import "@puckeditor/core/puck.css";
 
 export default function Page() {
   const initialData: Partial<Data<PuckProps, PuckRootProps>> = defaultPuckData;

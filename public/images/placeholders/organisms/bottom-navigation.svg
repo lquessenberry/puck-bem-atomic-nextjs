@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="BottomNavigation Placeholder">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E8EEFF"/>
-      <stop offset="100%" stop-color="#EEF9F2"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <rect x="32" y="32" width="1136" height="566" rx="28" fill="#FFFFFF" stroke="#D5DFF4" stroke-width="4"/>
-  <text x="600" y="300" text-anchor="middle" fill="#304978" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700">BottomNavigation Placeholder</text>
-  <text x="600" y="356" text-anchor="middle" fill="#6077A6" font-family="Inter, Arial, sans-serif" font-size="28">AtomicPuck</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  <rect x="15" y="75" width="170" height="40" rx="8" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <circle cx="45" cy="95" r="8" fill="#3b82f6"/>
+  <text x="45" y="99" text-anchor="middle" font-family="system-ui" font-size="10" fill="#ffffff">⌂</text>
+  <circle cx="85" cy="95" r="8" fill="#e9ecef"/>
+  <circle cx="125" cy="95" r="8" fill="#e9ecef"/>
+  <circle cx="165" cy="95" r="8" fill="#e9ecef"/>
 </svg>

@@ -1,0 +1,107 @@
+@use "sass:map";
+@use "../tokens" as tokens;
+
+// Big CTA Banner Component Styles
+
+.cta-banner {
+  padding: var(--spacing-12) 0;
+
+  &--gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  }
+
+  &--dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__container--image-right {
+    .cta-banner__image-wrapper {
+      order: 2;
+
+      @media (max-width: 768px) {
+        order: 0;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__content {
+    padding: var(--spacing-6);
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-3);
+    opacity: 0.8;
+  }
+
+  &__headline {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-4);
+
+    @media (max-width: 768px) {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  &__description {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-6);
+    opacity: 0.9;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    flex-wrap: wrap;
+  }
+
+  &__trust-badges {
+    display: flex;
+    gap: var(--spacing-6);
+    flex-wrap: wrap;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    opacity: 0.8;
+  }
+
+  &__badge-icon {
+    font-size: var(--font-size-lg);
+  }
+}

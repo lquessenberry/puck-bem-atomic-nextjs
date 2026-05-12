@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  <rect x="60" y="45" width="80" height="30" rx="15" fill="#e9ecef" stroke="#dee2e6" stroke-width="2"/>
+  <circle cx="75" cy="60" r="6" fill="#22c55e"/>
+  <text x="100" y="63" text-anchor="middle" font-family="system-ui" font-size="10" fill="#495057">Badge</text>
+  <text x="100" y="100" text-anchor="middle" font-family="system-ui" font-size="10" fill="#6c757d">Status Indicator</text>
+</svg>

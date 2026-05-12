@@ -1,0 +1,84 @@
+.toast {
+  position: fixed;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  max-width: var(--spacing-64);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--color-surface);
+    border: var(--spacing-0) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateX(100%);
+    transition:
+      opacity var(--motion-duration-fast) var(--motion-easing-standard),
+      transform var(--motion-duration-fast) var(--motion-easing-standard);
+
+    &--visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &--success {
+      border-color: var(--color-success);
+      background: color-mix(in srgb, var(--color-success), var(--color-surface) 95%);
+    }
+
+    &--error {
+      border-color: var(--color-danger);
+      background: color-mix(in srgb, var(--color-danger), var(--color-surface) 95%);
+    }
+
+    &--warning {
+      border-color: var(--color-warning);
+      background: color-mix(in srgb, var(--color-warning), var(--color-surface) 95%);
+    }
+
+    &--info {
+      border-color: var(--color-primary);
+      background: color-mix(in srgb, var(--color-primary), var(--color-surface) 95%);
+    }
+  }
+
+  &__message {
+    flex: 1;
+    font-size: var(--typography-font-size-sm);
+    color: var(--color-text);
+    line-height: var(--typography-line-height-relaxed);
+  }
+
+  &__dismiss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    font-size: var(--typography-font-size-lg);
+    line-height: 1;
+    transition: background var(--motion-duration-fast) var(--motion-easing-standard);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &:focus-visible {
+      outline: var(--spacing-0) solid var(--color-primary);
+      outline-offset: var(--spacing-0);
+    }
+  }
+}

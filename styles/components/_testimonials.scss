@@ -1,0 +1,150 @@
+@use "sass:map";
+@use "../tokens" as tokens;
+
+// Testimonial Carousel Component Styles
+
+.testimonial-carousel {
+  position: relative;
+  padding: var(--spacing-8) var(--spacing-12);
+
+  &__track {
+    overflow: hidden;
+  }
+
+  &__slide {
+    text-align: center;
+    animation: fadeIn var(--motion-slow) ease;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__rating {
+    color: var(--color-warning);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-4);
+  }
+
+  &__quote {
+    font-size: var(--font-size-xl);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-6);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-4);
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__meta {
+    text-align: left;
+  }
+
+  &__name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  &__role {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--motion-fast);
+
+    &:hover {
+      background: var(--color-surface-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2);
+    margin-top: var(--spacing-6);
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--color-surface-elevated);
+    cursor: pointer;
+    transition: all var(--motion-fast);
+
+    &--active {
+      background: var(--color-primary);
+    }
+
+    &:hover:not(&--active) {
+      background: var(--color-surface-hover);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 2), minmax(0, 1fr));
+  gap: var(--grid-gap, var(--space-4));
+  align-items: var(--grid-align, stretch);
+  width: 100%;
+}
+
+.column {
+  min-height: 120px;
+  border: 2px dashed var(--color-border-muted);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  padding: var(--space-4);
+  position: relative;
+
+  &:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface);
+  }
+}
+
+.columnContent {
+  width: 100%;
+}
+
+.emptyState {
+  width: 100%;
+  min-height: 80px;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

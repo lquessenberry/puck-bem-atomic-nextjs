@@ -1,0 +1,76 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  &__label {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  &__value {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-default);
+  }
+
+  &__separator {
+    color: var(--color-text-muted);
+  }
+
+  &__max {
+    color: var(--color-text-muted);
+  }
+
+  &__track {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-surface-muted);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  &__bar {
+    width: var(--progress-pct, 0%);
+    height: 100%;
+    background-color: var(--color-primary-default);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-normal);
+  }
+
+  // Size variants
+  &--sm &__track {
+    height: 0.25rem;
+  }
+
+  &--md &__track {
+    height: 0.5rem;
+  }
+
+  &--lg &__track {
+    height: 0.75rem;
+  }
+
+  // Variant colors
+  &__track--default &__bar {
+    background-color: var(--color-text-default);
+  }
+
+  &__track--primary &__bar {
+    background-color: var(--color-primary-default);
+  }
+
+  &__track--success &__bar {
+    background-color: var(--color-success-default);
+  }
+
+  &__track--warning &__bar {
+    background-color: var(--color-warning-default);
+  }
+
+  &__track--danger &__bar {
+    background-color: var(--color-danger-default);
+  }
+}

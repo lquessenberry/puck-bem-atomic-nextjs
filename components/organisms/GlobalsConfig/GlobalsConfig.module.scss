@@ -1,0 +1,413 @@
+// GlobalsConfig – Premium Design System Panel
+// Linear / Vercel / Framer-inspired aesthetic
+
+.gc {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+
+  // ── Tab bar ──────────────────────────────────────────────
+  &__tabs {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 2px;
+    background: #f7f7f9;
+    border-bottom: 1px solid #e8e8ed;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6e6e80;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+    letter-spacing: 0.01em;
+
+    svg { opacity: 0.7; }
+
+    &:hover {
+      background: #ebebf0;
+      color: #2d2d3a;
+    }
+
+    &--active {
+      background: #fff;
+      color: #1a1a2e;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+
+      svg { opacity: 1; }
+
+      &:hover { background: #fff; }
+    }
+  }
+
+  &__tab-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+  }
+
+  &__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    border: 1px solid #e0e0e8;
+    background: #fff;
+    color: #6e6e80;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+
+    &:hover {
+      background: #f0f0f5;
+      color: #2d2d3a;
+      border-color: #c8c8d4;
+    }
+
+    &--danger {
+      color: #e05252;
+      border-color: #fcc;
+
+      &:hover {
+        background: #fff5f5;
+        border-color: #f8a0a0;
+      }
+    }
+  }
+
+  &__file-input { display: none; }
+
+  // ── Body / Panel ────────────────────────────────────────
+  &__body {
+    padding: 20px 16px;
+    overflow-y: auto;
+    max-height: 520px;
+  }
+
+  &__panel {
+    animation: gc-fade 0.18s ease;
+  }
+
+  &__panel-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9898ab;
+    margin: 0 0 12px;
+
+    &--mt { margin-top: 28px; }
+  }
+
+  // ── Color rows ──────────────────────────────────────────
+  &__color-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__color-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #fff;
+    border: 1px solid #ebebf0;
+    border-radius: 10px;
+    transition: border-color 0.12s, box-shadow 0.12s;
+
+    &:hover {
+      border-color: #d0d0de;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+  }
+
+  &__color-swatch-wrap {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  &__color-swatch {
+    position: absolute;
+    inset: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+  }
+
+  &__color-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__color-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2d2d3a;
+    line-height: 1;
+  }
+
+  &__color-hex {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px;
+    color: #9898ab;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    outline: none;
+    letter-spacing: 0.04em;
+
+    &:focus {
+      color: #1a1a2e;
+    }
+  }
+
+  // ── Field rows ──────────────────────────────────────────
+  &__field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #ebebf0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f6;
+    gap: 12px;
+
+    &:last-child { border-bottom: none; }
+
+    &--top {
+      border: 1px solid #ebebf0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__field-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #3d3d52;
+    flex-shrink: 0;
+  }
+
+  // ── Inputs ──────────────────────────────────────────────
+  &__input {
+    padding: 6px 10px;
+    border: 1px solid #e0e0e8;
+    border-radius: 7px;
+    font-size: 13px;
+    background: #fafafa;
+    color: #1a1a2e;
+    outline: none;
+    transition: border-color 0.12s, box-shadow 0.12s;
+
+    &:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+      background: #fff;
+    }
+
+    &--short { width: 84px; text-align: right; }
+  }
+
+  &__input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__unit {
+    font-size: 11px;
+    color: #9898ab;
+    font-weight: 500;
+  }
+
+  &__select {
+    padding: 6px 10px;
+    border: 1px solid #e0e0e8;
+    border-radius: 7px;
+    font-size: 13px;
+    background: #fafafa;
+    color: #1a1a2e;
+    cursor: pointer;
+    outline: none;
+    min-width: 120px;
+    transition: border-color 0.12s;
+
+    &:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+    }
+  }
+
+  &__toggle {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+    cursor: pointer;
+  }
+
+  // ── Typography preview ──────────────────────────────────
+  &__preview-block {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ebebf0;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__preview-aa {
+    font-size: 52px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1;
+  }
+
+  &__preview-sample {
+    font-size: 14px;
+    color: #6e6e80;
+    line-height: 1.5;
+  }
+
+  // ── Spacing scale ────────────────────────────────────────
+  &__scale-grid {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 16px 12px 12px;
+    background: #fff;
+    border: 1px solid #ebebf0;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    overflow-x: auto;
+  }
+
+  &__scale-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  &__scale-bar {
+    width: 16px;
+    background: linear-gradient(180deg, #6366f1, #818cf8);
+    border-radius: 3px;
+    min-height: 2px;
+    transition: height 0.2s;
+  }
+
+  &__scale-val {
+    font-size: 10px;
+    color: #9898ab;
+    font-family: ui-monospace, monospace;
+  }
+
+  // ── Radius preview ───────────────────────────────────────
+  &__radius-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__radius-preview {
+    width: 24px;
+    height: 24px;
+    background: #6366f1;
+    opacity: 0.25;
+    flex-shrink: 0;
+  }
+
+  // ── Defaults blocks ──────────────────────────────────────
+  &__defaults-block {
+    margin-bottom: 20px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &__defaults-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #9898ab;
+    margin: 0 0 8px;
+  }
+
+  // ── Dirty bar ────────────────────────────────────────────
+  &__dirty-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #fffbeb;
+    border-top: 1px solid #fde68a;
+    font-size: 12px;
+    font-weight: 500;
+    color: #92400e;
+  }
+
+  &__dirty-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f59e0b;
+    flex-shrink: 0;
+  }
+
+  &__save-btn {
+    margin-left: auto;
+    padding: 5px 14px;
+    border-radius: 7px;
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.12s;
+
+    &:hover { background: #2d2d52; }
+  }
+}
+
+@keyframes gc-fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

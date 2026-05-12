@@ -1,3 +1,4 @@
+import "bulma/css/bulma.min.css";
 import type { Metadata } from "next";
 import "./globals.scss";
 

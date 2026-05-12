@@ -6,6 +6,7 @@
 @use "../styles/base/base";
 @use "../styles/utilities/helpers";
 @use "../styles/vendors/puck-overrides";
+@use "../styles/components" as components;
 
 :root {
   @include tokens.generate-universe(light);

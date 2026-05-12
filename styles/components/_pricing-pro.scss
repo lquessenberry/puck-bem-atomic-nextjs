@@ -1,0 +1,246 @@
+// PricingTablePro – BEM component styles
+
+.pricing-pro {
+  padding: var(--space-16, 4rem) var(--space-6, 1.5rem);
+  background: var(--color-surface-muted, #f8f9fa);
+
+  &__container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  // ── Toggle ─────────────────────────────────────────────
+  &__toggle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+  }
+
+  &__toggle-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s;
+
+    &[data-active="true"] {
+      font-weight: 700;
+      color: #111827;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    border-radius: 9999px;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+
+    &[data-checked="true"] {
+      background: #3b82f6;
+    }
+  }
+
+  &__toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: left 0.2s;
+
+    .pricing-pro__toggle[data-checked="true"] & {
+      left: 27px;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  // ── Grid ───────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  // ── Card ───────────────────────────────────────────────
+  &__card {
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+
+    &[data-popular="true"] {
+      border: 2px solid #3b82f6;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+      &[data-popular="true"] {
+        box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+      }
+    }
+  }
+
+  &__card-inner {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__card-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  &__popular-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 9999px;
+    background: #eff6ff;
+    color: #3b82f6;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  &__tier-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.5rem;
+  }
+
+  &__tier-desc {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  // ── Price ──────────────────────────────────────────────
+  &__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__currency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+
+  &__amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1;
+  }
+
+  &__period {
+    font-size: 1rem;
+    color: #9ca3af;
+    align-self: flex-end;
+    margin-bottom: 4px;
+  }
+
+  &__yearly-total {
+    text-align: center;
+    font-size: 13px;
+    color: #16a34a;
+    margin: 0 0 1.25rem;
+  }
+
+  // ── CTA ────────────────────────────────────────────────
+  &__cta {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+    transition: background 0.15s, color 0.15s;
+    margin-bottom: 1.5rem;
+
+    &[data-popular="true"] {
+      background: #3b82f6;
+      color: #fff;
+
+      &:hover { background: #2563eb; border-color: #2563eb; }
+    }
+
+    &:not([data-popular="true"]):hover {
+      background: #eff6ff;
+    }
+  }
+
+  // ── Features ───────────────────────────────────────────
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+  }
+
+  &__check {
+    width: 18px;
+    height: 18px;
+    color: #22c55e;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+}
