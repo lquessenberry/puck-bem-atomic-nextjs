@@ -1,0 +1,78 @@
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: var(--spacing-0) solid var(--color-border);
+  overflow: hidden;
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: var(--radius-lg);
+  }
+
+  &--sm {
+    width: var(--spacing-8);
+    height: var(--spacing-8);
+    font-size: var(--typography-font-size-xs);
+  }
+
+  &--md {
+    width: var(--spacing-10);
+    height: var(--spacing-10);
+    font-size: var(--typography-font-size-sm);
+  }
+
+  &--lg {
+    width: var(--spacing-14);
+    height: var(--spacing-14);
+    font-size: var(--typography-font-size-lg);
+  }
+
+  &--xl {
+    width: var(--spacing-20);
+    height: var(--spacing-20);
+    font-size: var(--typography-font-size-2xl);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__initials {
+    font-weight: var(--typography-font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: var(--spacing-3);
+    height: var(--spacing-3);
+    border: var(--spacing-0) solid var(--color-surface);
+    border-radius: 50%;
+
+    .avatar--online & {
+      background: var(--color-success);
+    }
+
+    .avatar--offline & {
+      background: var(--color-text-muted);
+    }
+
+    .avatar--busy & {
+      background: var(--color-danger);
+    }
+
+    .avatar--away & {
+      background: var(--color-warning);
+    }
+  }
+}

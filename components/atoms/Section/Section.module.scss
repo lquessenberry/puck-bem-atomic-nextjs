@@ -1,0 +1,71 @@
+.section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// Background variants
+.section--background-default {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.section--background-muted {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.section--background-primary {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.section--background-secondary {
+  background: var(--color-secondary);
+  color: var(--color-surface);
+}
+
+.section--background-accent {
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+// Padding variants
+.section--padding-none {
+  padding: 0;
+}
+
+.section--padding-small {
+  padding: var(--space-8) 0;
+}
+
+.section--padding-medium {
+  padding: var(--space-12) 0;
+}
+
+.section--padding-large {
+  padding: var(--space-16) 0;
+}
+
+.section--padding-xl {
+  padding: var(--space-20) 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .section--padding-small {
+    padding: var(--space-6) 0;
+  }
+
+  .section--padding-medium {
+    padding: var(--space-8) 0;
+  }
+
+  .section--padding-large {
+    padding: var(--space-12) 0;
+  }
+
+  .section--padding-xl {
+    padding: var(--space-16) 0;
+  }
+}

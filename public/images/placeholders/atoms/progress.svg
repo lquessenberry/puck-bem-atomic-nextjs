@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  <rect x="30" y="45" width="140" height="12" rx="6" fill="#e9ecef"/>
+  <rect x="30" y="45" width="90" height="12" rx="6" fill="#3b82f6"/>
+  <circle cx="75" cy="80" r="18" fill="none" stroke="#e9ecef" stroke-width="4"/>
+  <circle cx="75" cy="80" r="18" fill="none" stroke="#3b82f6" stroke-width="4" stroke-dasharray="80 113" stroke-linecap="round"/>
+  <text x="125" y="85" font-family="system-ui" font-size="14" fill="#495057">70%</text>
+  <text x="100" y="110" text-anchor="middle" font-family="system-ui" font-size="10" fill="#6c757d">Progress Indicator</text>
+</svg>

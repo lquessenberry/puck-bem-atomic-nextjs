@@ -1,0 +1,244 @@
+.bigCtaBanner {
+  width: 100%;
+  padding: var(--space-20) 0;
+  overflow: hidden;
+
+  &--background-muted {
+    background: var(--color-surface-muted);
+  }
+
+  &--background-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent) 0%,
+      var(--color-accent-hover, #1d4ed8) 100%
+    );
+  }
+
+  &--background-dark {
+    background: #0f172a;
+    color: var(--color-surface);
+  }
+}
+
+.bigCtaBanner__container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.bigCtaBanner--reversed {
+  .bigCtaBanner__container {
+    direction: rtl;
+
+    > * {
+      direction: ltr;
+    }
+  }
+}
+
+.bigCtaBanner__imageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.bigCtaBanner__image {
+  object-fit: cover;
+}
+
+.bigCtaBanner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bigCtaBanner__inner {
+  max-width: 480px;
+}
+
+.bigCtaBanner__eyebrow {
+  display: inline-block;
+  font: var(--font-body-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.bigCtaBanner__headline {
+  font: var(--font-display-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-heading);
+  line-height: 1.2;
+  margin: 0 0 var(--space-6);
+}
+
+.bigCtaBanner__description {
+  font: var(--font-body-xl);
+  color: var(--color-text);
+  line-height: 1.7;
+  margin: 0 0 var(--space-8);
+}
+
+.bigCtaBanner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+.bigCtaBanner__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  font: var(--font-body-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-fast) var(--ease-out);
+  min-height: 56px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &--primary {
+    background: var(--color-accent);
+    color: var(--color-surface);
+
+    &:hover {
+      background: var(--color-accent-hover);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--color-heading);
+    border: 2px solid var(--color-border);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-accent);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+
+    &:hover {
+      background: var(--color-accent-muted);
+    }
+  }
+}
+
+.bigCtaBanner__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.bigCtaBanner__badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: var(--font-body-sm);
+  color: var(--color-text-muted);
+}
+
+.bigCtaBanner__badgeIcon {
+  font-size: var(--font-size-lg);
+}
+
+.bigCtaBanner__badgeText {
+  font-weight: var(--font-weight-medium);
+}
+
+// Gradient/dark background overrides
+.bigCtaBanner--background-gradient,
+.bigCtaBanner--background-dark {
+  .bigCtaBanner__eyebrow {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .bigCtaBanner__headline,
+  .bigCtaBanner__description {
+    color: var(--color-surface);
+  }
+
+  .bigCtaBanner__button--secondary {
+    border-color: var(--color-surface);
+    color: var(--color-surface);
+
+    &:hover {
+      background: var(--color-surface);
+      color: var(--color-heading);
+    }
+  }
+
+  .bigCtaBanner__badge {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+// Responsive
+@media (max-width: 968px) {
+  .bigCtaBanner__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    text-align: center;
+  }
+
+  .bigCtaBanner__imageWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .bigCtaBanner__inner {
+    max-width: 100%;
+  }
+
+  .bigCtaBanner__actions {
+    justify-content: center;
+  }
+
+  .bigCtaBanner__trust {
+    justify-content: center;
+  }
+
+  .bigCtaBanner--reversed {
+    .bigCtaBanner__container {
+      direction: ltr;
+    }
+
+    .bigCtaBanner__imageWrapper {
+      order: -1;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bigCtaBanner {
+    padding: var(--space-10) 0;
+  }
+
+  .bigCtaBanner__actions {
+    flex-direction: column;
+  }
+
+  .bigCtaBanner__button {
+    width: 100%;
+  }
+}

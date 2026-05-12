@@ -1,0 +1,248 @@
+@use "sass:map";
+@use "../tokens" as tokens;
+
+// Hero V2 Component Styles
+
+.hero-v2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  &--small {
+    min-height: 50vh;
+  }
+
+  &--default {
+    min-height: 75vh;
+  }
+
+  &--large {
+    min-height: 90vh;
+  }
+
+  &--full {
+    min-height: 100vh;
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    &--dark {
+      background: #000;
+    }
+
+    &--light {
+      background: #fff;
+    }
+
+    &--brand {
+      background: var(--color-primary);
+    }
+
+    // Handle dynamic opacity via data attribute
+    &[data-opacity="0"] {
+      opacity: 0;
+    }
+    &[data-opacity="10"] {
+      opacity: 0.1;
+    }
+    &[data-opacity="20"] {
+      opacity: 0.2;
+    }
+    &[data-opacity="30"] {
+      opacity: 0.3;
+    }
+    &[data-opacity="40"] {
+      opacity: 0.4;
+    }
+    &[data-opacity="50"] {
+      opacity: 0.5;
+    }
+    &[data-opacity="60"] {
+      opacity: 0.6;
+    }
+    &[data-opacity="70"] {
+      opacity: 0.7;
+    }
+    &[data-opacity="80"] {
+      opacity: 0.8;
+    }
+    &[data-opacity="90"] {
+      opacity: 0.9;
+    }
+    &[data-opacity="100"] {
+      opacity: 1;
+    }
+  }
+
+  &__background-image {
+    object-fit: cover;
+  }
+
+  &__background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: var(--spacing-8);
+    text-align: center;
+
+    .hero-v2--align-left & {
+      text-align: left;
+      margin-right: auto;
+    }
+
+    .hero-v2--align-right & {
+      text-align: right;
+      margin-left: auto;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    margin-top: var(--spacing-6);
+
+    .hero-v2--align-left & {
+      justify-content: flex-start;
+    }
+
+    .hero-v2--align-right & {
+      justify-content: flex-end;
+    }
+  }
+
+  &__scroll-prompt {
+    position: absolute;
+    bottom: var(--spacing-8);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce 2s infinite;
+  }
+
+  &__scroll-text {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: var(--spacing-2);
+  }
+
+  &__scroll-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-4);
+    opacity: 0.9;
+  }
+
+  &__headline {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-6);
+
+    @media (max-width: 768px) {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  &__subheadline {
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-8);
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__scroll-prompt {
+    position: absolute;
+    bottom: var(--spacing-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity var(--motion-fast);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}

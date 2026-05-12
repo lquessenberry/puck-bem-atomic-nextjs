@@ -1,0 +1,126 @@
+.stepper {
+  display: flex;
+  gap: var(--spacing-lg);
+
+  &--horizontal {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &--vertical {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 1;
+
+    &:last-child {
+      flex: 0;
+    }
+  }
+
+  &__stepHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  &__stepNumber {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-muted);
+    border: 2px solid var(--color-border-default);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+  }
+
+  &__number {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &__check,
+  &__error {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-surface-default);
+  }
+
+  &__stepLine {
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-border-default);
+    transition: background-color var(--transition-fast);
+  }
+
+  &__stepContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  &__stepLabel {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  &__stepDescription {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  // Active state
+  &__step--active &__stepNumber {
+    background-color: var(--color-primary-default);
+    border-color: var(--color-primary-default);
+    color: var(--color-surface-default);
+  }
+
+  &__step--active &__stepLabel {
+    color: var(--color-text-default);
+  }
+
+  // Completed state
+  &__step--completed &__stepNumber {
+    background-color: var(--color-success-default);
+    border-color: var(--color-success-default);
+  }
+
+  &__step--completed &__stepLabel {
+    color: var(--color-text-default);
+  }
+
+  // Error state
+  &__step--error &__stepNumber {
+    background-color: var(--color-danger-default);
+    border-color: var(--color-danger-default);
+  }
+
+  &__step--error &__stepLabel {
+    color: var(--color-danger-default);
+  }
+
+  // Vertical orientation adjustments
+  &--vertical &__stepHeader {
+    flex-direction: row;
+  }
+
+  &--vertical &__stepLine {
+    width: 2px;
+    height: var(--spacing-lg);
+    margin-left: 1rem;
+  }
+}

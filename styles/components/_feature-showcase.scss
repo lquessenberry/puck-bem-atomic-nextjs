@@ -1,0 +1,43 @@
+// FeatureShowcase – BEM component styles
+
+.feature-showcase {
+  &__figure {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background: var(--color-accent, #3b82f6);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+// BigCTABanner – BEM component styles
+
+.big-cta {
+  &__figure {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+}

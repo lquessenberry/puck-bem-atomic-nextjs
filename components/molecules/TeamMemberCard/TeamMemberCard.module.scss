@@ -1,0 +1,167 @@
+.teamMemberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.teamMemberCard__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  border: 3px solid var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.teamMemberCard__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-base) var(--ease-out);
+
+  .teamMemberCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.teamMemberCard__content {
+  text-align: center;
+}
+
+.teamMemberCard__name {
+  font: var(--font-heading-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-heading);
+  margin: 0 0 var(--space-1);
+}
+
+.teamMemberCard__role {
+  display: block;
+  font: var(--font-body-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.teamMemberCard__bio {
+  font: var(--font-body-sm);
+  color: var(--color-text);
+  margin: 0 0 var(--space-4);
+  line-height: var(--line-height-relaxed);
+}
+
+.teamMemberCard__socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.teamMemberCard__socialLink {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  background: var(--color-surface-muted);
+  transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--color-accent);
+    color: var(--color-surface);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Variant: Minimal
+.teamMemberCard--variant-minimal {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: var(--space-4);
+
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .teamMemberCard__avatar {
+    width: 80px;
+    height: 80px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .teamMemberCard__bio {
+    display: none;
+  }
+}
+
+// Variant: Horizontal
+.teamMemberCard--variant-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-4);
+  text-align: left;
+
+  .teamMemberCard__avatar {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .teamMemberCard__content {
+    text-align: left;
+    flex: 1;
+  }
+
+  .teamMemberCard__socials {
+    justify-content: flex-start;
+  }
+}
+
+// Touch optimization
+@media (hover: none) {
+  .teamMemberCard:hover {
+    transform: none;
+  }
+
+  .teamMemberCard__image {
+    transform: none;
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .teamMemberCard,
+  .teamMemberCard__image,
+  .teamMemberCard__socialLink {
+    transition: none;
+  }
+}

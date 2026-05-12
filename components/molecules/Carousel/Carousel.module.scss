@@ -1,0 +1,121 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    transform: translateX(calc(-1 * var(--carousel-offset, 0%)));
+    transition: transform var(--transition-normal);
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--color-surface-default);
+  }
+
+  &__title {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &__description {
+    margin: 0;
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-surface-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-full);
+    color: var(--color-text-default);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: var(--z-index-above);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-surface-hover);
+      border-color: var(--color-primary-default);
+      color: var(--color-primary-default);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__arrow--prev {
+    left: var(--spacing-md);
+  }
+
+  &__arrow--next {
+    right: var(--spacing-md);
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: var(--z-index-above);
+  }
+
+  &__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-default);
+    border: 2px solid var(--color-border-default);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-surface-hover);
+    }
+  }
+
+  &__dot--active {
+    background-color: var(--color-primary-default);
+    border-color: var(--color-primary-default);
+  }
+}

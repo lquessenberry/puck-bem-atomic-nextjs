@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
+  <rect width="200" height="120" fill="#eff6ff"/>
+  <rect x="50" y="35" width="100" height="36" rx="8" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="57" text-anchor="middle" font-family="system-ui" font-size="12" fill="#ffffff" font-weight="500">Button</text>
+  <rect x="50" y="80" width="100" height="28" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="98" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">Secondary</text>
+</svg>

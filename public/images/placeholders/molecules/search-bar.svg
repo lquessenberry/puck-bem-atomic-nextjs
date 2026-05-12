@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  <rect x="20" y="35" width="160" height="40" rx="20" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+  <circle cx="45" cy="55" r="10" fill="none" stroke="#6c757d" stroke-width="2"/>
+  <path d="M52 62 L58 68" stroke="#6c757d" stroke-width="2" stroke-linecap="round"/>
+  <text x="65" y="59" font-family="system-ui" font-size="12" fill="#6c757d">Search...</text>
+  <rect x="135" y="42" width="36" height="26" rx="13" fill="#3b82f6"/>
+  <text x="153" y="59" text-anchor="middle" font-family="system-ui" font-size="10" fill="#ffffff">Go</text>
+</svg>

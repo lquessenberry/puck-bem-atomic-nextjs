@@ -1,0 +1,82 @@
+@use "sass:map";
+@use "../tokens" as tokens;
+
+// Stats Counter Component Styles
+
+.stats-grid {
+  display: grid;
+  gap: var(--spacing-8);
+
+  &--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    &--cols-3,
+    &--cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--spacing-4);
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-4);
+    color: inherit;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    margin-bottom: var(--spacing-2);
+    color: inherit;
+
+    @media (max-width: 768px) {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  &__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    color: inherit;
+  }
+}
+
+// Dark background variant
+.stats-grid--light {
+  .stat-item {
+    color: white;
+  }
+}
