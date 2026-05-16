@@ -1,0 +1,93 @@
+.atomic-era-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-20) var(--spacing-6);
+  background: var(--color-background);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  min-height: 560px;
+
+  &--left {
+    text-align: left;
+    justify-items: start;
+  }
+
+  &--center {
+    text-align: center;
+    justify-items: center;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: var(--typography-font-size-sm);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-2);
+    border-bottom: 3px solid var(--color-secondary);
+  }
+
+  &__title {
+    font-size: var(--typography-font-size-7xl);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-5);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  &__body {
+    font-size: var(--typography-font-size-lg);
+    color: var(--color-text-muted);
+    max-width: 580px;
+    margin: 0 auto var(--spacing-8);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    justify-content: center;
+  }
+
+  /* Geometric accent shapes - 60s advertising inspired */
+  &__accents {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.08;
+
+    .accent {
+      position: absolute;
+      background: var(--color-secondary);
+
+      &:nth-child(1) {
+        top: -15%;
+        right: -10%;
+        width: 45%;
+        height: 55%;
+        transform: rotate(18deg);
+      }
+
+      &:nth-child(2) {
+        bottom: -20%;
+        left: -15%;
+        width: 38%;
+        height: 48%;
+        transform: rotate(-12deg);
+        background: var(--color-accent);
+      }
+    }
+  }
+}
