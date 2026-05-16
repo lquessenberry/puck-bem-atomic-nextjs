@@ -2,6 +2,7 @@
 
 import {
   AdvancedPricingTable,
+  AtomicEraHero,
   Badge,
   BigCTABanner,
   BottomNavigation,
@@ -138,6 +139,16 @@ type Props = {
     secondaryLabel: string;
     secondaryHref: string;
     align: "left" | "center";
+  };
+  AtomicEraHero: {
+    eyebrow?: string;
+    title: string;
+    body?: string;
+    primaryLabel?: string;
+    primaryHref?: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+    align?: "left" | "center";
   };
   BottomNavigation: {
     ariaLabel: string;
@@ -506,6 +517,7 @@ export const config: Config<
         "FeatureShowcase",
         "StatsSection",
         "CallToActionSection",
+        "AtomicEraHero",
       ],
       defaultExpanded: true,
     },
@@ -856,6 +868,35 @@ export const config: Config<
         align: "left",
       },
       render: (props) => <Hero {...props} />,
+    },
+    AtomicEraHero: {
+      fields: {
+        eyebrow: { type: "text" },
+        title: { type: "text" },
+        body: { type: "textarea" },
+        primaryLabel: { type: "text" },
+        primaryHref: { type: "text" },
+        secondaryLabel: { type: "text" },
+        secondaryHref: { type: "text" },
+        align: {
+          type: "radio",
+          options: [
+            { label: "Left", value: "left" },
+            { label: "Center", value: "center" },
+          ],
+        },
+      },
+      defaultProps: {
+        eyebrow: "THE FUTURE IS NOW",
+        title: "UNIVAC 9000",
+        body: "Brings tomorrow’s data processing to your business today.",
+        primaryLabel: "Get Started",
+        primaryHref: "#",
+        secondaryLabel: "Learn More",
+        secondaryHref: "#",
+        align: "center",
+      },
+      render: (props) => <AtomicEraHero {...props} />,
     },
     BottomNavigation: {
       fields: {
