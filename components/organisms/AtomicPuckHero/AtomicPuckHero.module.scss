@@ -1,0 +1,112 @@
+.atomic-puck-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-16) var(--spacing-6);
+  background: var(--color-background);
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  min-height: 520px;
+
+  &--left {
+    text-align: left;
+    justify-items: start;
+  }
+
+  &--center {
+    text-align: center;
+    justify-items: center;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+  }
+
+  &__eyebrow {
+    font-size: var(--typography-font-size-sm);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-3);
+  }
+
+  &__title {
+    font-size: var(--typography-font-size-6xl);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-4);
+  }
+
+  &__body {
+    font-size: var(--typography-font-size-lg);
+    color: var(--color-text-muted);
+    max-width: 560px;
+    margin: 0 auto var(--spacing-8);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    justify-content: center;
+  }
+
+  /* Decorative Atom - fully token driven */
+  &__atom {
+    position: absolute;
+    right: -8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    height: 420px;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+
+    .atom__core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: var(--color-secondary);
+      border-radius: 9999px;
+      box-shadow: 0 0 90px color-mix(in srgb, var(--color-secondary) 50%, transparent);
+    }
+
+    .atom__orbit {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      border: 2px solid color-mix(in srgb, var(--color-secondary) 65%, transparent);
+      border-radius: 9999px;
+      animation: atom-orbit 10s linear infinite;
+      opacity: 0.45;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        background: var(--color-accent);
+        border-radius: 9999px;
+        box-shadow: 0 0 18px var(--color-accent);
+      }
+    }
+  }
+}
+
+@keyframes atom-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
