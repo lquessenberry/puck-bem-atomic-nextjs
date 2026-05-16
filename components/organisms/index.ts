@@ -89,3 +89,6 @@ export {
   type TestimonialItem,
 } from "./TestimonialCarousel/TestimonialCarousel";
 export { Toast, type ToastItem, type ToastProps } from "./Toast/Toast";
+
+export { AtomicPuckHero, type AtomicPuckHeroProps } from "./AtomicPuckHero/AtomicPuckHero";
+export { AtomicEraHero, type AtomicEraHeroProps } from "./AtomicEraHero/AtomicEraHero";
