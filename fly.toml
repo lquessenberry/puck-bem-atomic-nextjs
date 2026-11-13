@@ -10,7 +10,7 @@ primary_region = 'ams'
 
 [env]
   HOSTNAME = '0.0.0.0'
-  PORT = '3000'
+  PORT = '8080'
 
 [http_service]
   internal_port = 3000
